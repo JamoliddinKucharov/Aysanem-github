@@ -1,0 +1,126 @@
+.row {
+  justify-content: space-between;
+  align-items: start;
+}
+.teachers {
+  overflow-x: hidden;
+}
+
+.teachers .container {
+  position: relative;
+  z-index: 1;
+}
+.teachers .bg {
+  position: absolute;
+  z-index: -1;
+  right: -100px;
+  transform: rotate(30deg);
+}
+
+.teachers .bg img {
+  width: 700px;
+}
+
+.teachers .title h1 {
+  font-size: 130px;
+  color: var(--black);
+  font-family: "Big Shoulders", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  margin-top: 110px;
+}
+
+.teacher img {
+  border-radius: 30px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 37px;
+}
+
+.teacher h4 {
+  font-weight: 700;
+  font-size: 38px;
+  color: var(--black);
+  height: 130px;
+  text-align: left;
+}
+
+.teacher p {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--black);
+  width: 90%;
+  text-align: left;
+}
+
+.teacher p span {
+  display: block;
+}
+
+@media (max-width: 1400px) {
+  .teacher p {
+    font-size: 15px;
+  }
+  .teacher h4 {
+    font-size: 30px;
+    height: 100px;
+  }
+  .teacher img {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 1000px) {
+  .teachers .title h1 {
+    font-size: 100px;
+    margin-bottom: 50px;
+    margin-top: 110px;
+  }
+  .teachers .bg img {
+    width: 600px;
+  }
+}
+@media (max-width: 900px) {
+  .teacher p {
+    font-size: 14px;
+  }
+  .teacher h4 {
+    font-size: 28px;
+    height: 85px;
+  }
+  .teacher img {
+    margin-bottom: 15px;
+  }
+
+  .teachers .title h1 {
+    font-size: 80px;
+    margin-bottom: 40px;
+    margin-top: 80px;
+  }
+  .teachers .bg {
+    right: -170px;
+  }
+  .teachers .bg img {
+    width: 500px;
+  }
+}
+
+@media (max-width: 400px) {
+  .teacher p {
+    font-size: 13px;
+  }
+  .teacher h4 {
+    font-size: 26px;
+    height: 85px;
+  }
+  .teacher img {
+    margin-bottom: 15px;
+  }
+  .teachers .title h1 {
+    font-size: 60px;
+  }
+ 
+  .teachers .bg img {
+    width: 400px;
+  }
+}

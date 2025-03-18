@@ -1,0 +1,151 @@
+.row {
+  justify-content: space-between;
+}
+.blocks {
+  display: flex;
+}
+.calculator {
+  background: var(--blue);
+  border-radius: 30px;
+  padding: 65px;
+  margin-bottom: 50px;
+  overflow-x: hidden;
+}
+.calculator h2,
+.calculator h2 span {
+  font-weight: 700;
+  font-size: 60px;
+  color: var(--white);
+}
+.calculator h2 span {
+  display: block;
+}
+
+.calculator .block {
+  position: relative;
+  margin-right: 40px;
+  width: 250px;
+}
+
+.calculator .block:last-child {
+  margin-right: 0;
+}
+
+.calculator .block .input {
+  position: relative;
+  height: 60px;
+}
+
+.calculator .block .input input {
+  position: absolute;
+  height: 100%;
+  outline: none;
+  padding: 22px;
+  border-radius: 20px;
+  border: none;
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+  color: var(--black);
+}
+
+.calculator .block .input span {
+  position: absolute;
+  z-index: 2;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.calculator .block p {
+  font-weight: 400;
+  color: var(--white);
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.calculator p.bottom {
+  text-align: center;
+  font-weight: 400;
+  font-size: 28px;
+  color: var(--white);
+  margin-top: 40px;
+}
+
+@media (max-width: 1390px) {
+  .row {
+    flex-direction: column;
+    align-items: start;
+  }
+  .calculator h2 span {
+    display: inline;
+  }
+  .blocks {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .calculator .block {
+    width: 30%;
+  }
+  .calculator p.bottom {
+    font-size: 21px;
+  }
+
+  .calculator .block p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .calculator p.bottom {
+    font-size: 15px;
+  }
+
+  .calculator .block p {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .calculator h2,
+  .calculator h2 span {
+    font-size: 45px;
+  }
+  .calculator {
+    padding: 40px;
+  }
+  .calculator .block {
+    margin-right: 20px;
+    width: 32%;
+  }
+  .calculator .block .input {
+    height: 55px;
+  }
+
+  .calculator .block .input input {
+    font-size: 25px;
+  }
+}
+@media (max-width: 700px) {
+  .blocks {
+    flex-direction: column;
+  }
+  .calculator .block {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .calculator p.bottom {
+    margin-top: 0px;
+  }
+  .calculator {
+    padding: 40px 20px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 450px) {
+  .calculator h2,
+  .calculator h2 span {
+    font-size: 36px;
+  }
+}

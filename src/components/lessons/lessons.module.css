@@ -1,0 +1,159 @@
+.titles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 45px;
+}
+.titles h1 {
+  font-size: 130px;
+  color: var(--black);
+  font-family: "Big Shoulders", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.titles p {
+  width: 65%;
+  background-color: var(--red);
+  border-radius: 30px;
+  text-align: center;
+  padding: 32px;
+}
+
+.titles p span,
+.titles p {
+  display: block;
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--white);
+}
+
+.lessons .row {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.lessons .lessonBlock {
+  width: 43%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lessons .lessonBlock h1 {
+  font-size: 161px;
+  color: var(--blue);
+}
+.lessons .lessonBlock p {
+  color: var(--black);
+  font-size: 45px;
+}
+
+@media (max-width: 1350px) {
+  .titles p {
+    width: auto;
+    padding: 20px 50px;
+  }
+
+  .titles p span,
+  .titles p {
+    font-size: 28px;
+  }
+
+  .lessons .lessonBlock {
+    width: 43%;
+    gap: 20px;
+  }
+
+  .lessons .lessonBlock h1 {
+    font-size: 141px;
+  }
+  .lessons .lessonBlock p {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .titles h1 {
+    font-size: 100px;
+  }
+
+  .titles p span,
+  .titles p {
+    font-size: 23px;
+  }
+  .lessons .lessonBlock h1 {
+    font-size: 100px;
+  }
+  .lessons .lessonBlock p {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 900px) {
+  .titles h1 {
+    font-size: 80px;
+  }
+  .lessons .lessonBlock {
+    width: 47%;
+    gap: 20px;
+  }
+  .titles p span,
+  .titles p {
+    font-size: 18px;
+  }
+  .lessons .lessonBlock h1 {
+    font-size: 70px;
+  }
+  .lessons .lessonBlock p {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 670px) {
+  .titles {
+    flex-direction: column;
+    align-items: start;
+    margin-top: 20px;
+  }
+  .titles h1 {
+    text-align: left !important;
+  }
+  .titles p {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .lessons .lessonBlock h1 {
+    font-size: 50px;
+  }
+  .lessons .lessonBlock p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 450px) {
+  .lessons .lessonBlock h1 {
+    font-size: 40px;
+  }
+  .titles p span,
+  .titles p {
+    font-size: 15px;
+  }
+  .lessons .lessonBlock p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 400px) {
+  .titles h1 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 360px) {
+  .titles p span,
+  .titles p {
+    font-size: 12px;
+  }
+  .lessons .lessonBlock p {
+    font-size: 13px;
+  }
+}

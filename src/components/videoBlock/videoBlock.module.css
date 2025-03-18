@@ -1,0 +1,154 @@
+.videoBlock {
+  background: url("/public/assets/images/vide-bg.png") no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding-top: 81px;
+  padding-bottom: 123px;
+}
+.videoBlock h1 {
+  font-weight: 400;
+  font-size: 58.59px;
+  color: var(--white);
+  margin-bottom: 52px;
+}
+
+.videoBlock p {
+  font-weight: 400;
+  font-size: 32px;
+  color: var(--white);
+  margin-top: 100px;
+}
+
+.videoBlock .video {
+  position: relative;
+  width: 100%;
+  height: 640px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.videoBlock .video .poster {
+  width: 100%;
+  height: 100%;
+}
+.videoBlock .video .poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.videoBlock .video .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--red);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 1450px) {
+  .videoBlock {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  .videoBlock h1 {
+    font-size: 40px;
+    margin-bottom: 35px;
+  }
+
+  .videoBlock p {
+    font-size: 25px;
+    margin-top: 40px;
+  }
+
+  .videoBlock .video {
+    height: 530px;
+  }
+
+  .videoBlock .video .play {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .videoBlock .video {
+    height: 450px;
+  }
+  .videoBlock .video .play {
+    width: 115px;
+    height: 115px;
+  }
+
+  .videoBlock .video .play svg {
+    width: 35px;
+    height: auto;
+  }
+}
+
+@media (max-width: 880px) {
+  .videoBlock .video {
+    height: 430px;
+  }
+  .videoBlock .video .play {
+    width: 100px;
+    height: 100px;
+  }
+
+  .videoBlock .video .play svg {
+    width: 33px;
+  }
+
+  .videoBlock h1 {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+
+  .videoBlock p {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  .videoBlock {
+    padding-top: 35px;
+    padding-bottom: 45px;
+  }
+}
+@media (max-width: 860px) {
+  .videoBlock .video {
+    height: 300px;
+  }
+}
+@media (max-width: 550px) {
+  .videoBlock .video {
+    height: 250px;
+  }
+  .videoBlock h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .videoBlock p {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .videoBlock .video .play {
+    width: 70px;
+    height: 70px;
+  }
+
+  .videoBlock .video .play svg {
+    width: 25px;
+  }
+}
+
+@media (max-width: 350px) {
+  .videoBlock .video {
+    height: 200px;
+  }
+}

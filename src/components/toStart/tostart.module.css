@@ -1,0 +1,97 @@
+.toStart {
+  background-color: var(--red);
+  border-radius: 30px;
+  padding: 80px 0;
+  text-align: center;
+  margin-bottom: 86px;
+}
+.toStart h4 {
+  width: 340px;
+  margin: auto;
+  text-align: center;
+  background-color: var(--white);
+  font-size: 40px;
+  border-radius: 30px;
+  margin-bottom: 40px;
+}
+
+.toStart h1,
+.toStart span {
+  font-weight: 700;
+  font-size: 88px;
+  color: var(--white);
+}
+.toStart a {
+  margin-top: 31px;
+  padding: 40px 120px;
+  border-radius: 90px;
+  cursor: pointer;
+  border: none;
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 45px;
+  display: inline-block;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+@media (max-width: 1300px) {
+  .toStart {
+    padding: 50px 0;
+    margin-bottom: 50px;
+  }
+  .toStart h4 {
+    font-size: 30px;
+    width: 250px;
+    padding: 5px 0;
+  }
+  .toStart h1,
+  .toStart span {
+    font-size: 50px;
+  }
+  .toStart a {
+    margin-top: 31px;
+    padding: 30px 70px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .toStart {
+    padding: 50px 0;
+    margin-bottom: 30px;
+  }
+  .toStart h4 {
+    font-size: 25px;
+    width: 200px;
+    padding: 5px 0;
+  }
+  .toStart h1,
+  .toStart span {
+    font-size: 40px;
+  }
+  .toStart a {
+    margin-top: 21px;
+    padding: 20px 50px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .toStart h4 {
+    font-size: 22px;
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  .toStart h1,
+  .toStart span {
+    font-size: 25px;
+  }
+  .toStart a {
+    margin-top: 15px;
+    padding: 15px 40px;
+    font-size: 18px;
+  }
+  .toStart {
+    padding: 30px 0;
+  }
+}
