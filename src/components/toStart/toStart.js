@@ -36,7 +36,7 @@ const ToStart = React.memo(() => {
           <span>{timeLeft.days}</span> kun <span>{timeLeft.hours}</span> soat{" "}
           <span>{timeLeft.minutes}</span> daqiqa
         </h1>
-        <Link to={"https://t.me/aysanem_private_bot"}>SMM KASBINI EGALLASH</Link>
+        <Link to={"https://t.me/aysanem_private_bot"} target="_blank">SMM KASBINI EGALLASH</Link>
       </div>
     </div>
   );
