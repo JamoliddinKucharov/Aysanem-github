@@ -121,6 +121,10 @@
     font-size: 25px;
     margin-bottom: 0;
   }
+  .toStart .days {
+    margin-bottom: 15px;
+    display: block;
+  }
   .toStart a {
     margin-top: 15px;
     padding: 15px 40px;
