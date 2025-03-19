@@ -5,12 +5,9 @@
   margin-top: 80px;
   margin-bottom: 45px;
 }
-.titles h1 {
-  font-size: 130px;
-  color: var(--black);
-  font-family: "Big Shoulders", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
+.titles svg {
+  height: auto;
+  width: 30%;
 }
 
 .titles p {
@@ -74,10 +71,6 @@
 }
 
 @media (max-width: 1000px) {
-  .titles h1 {
-    font-size: 100px;
-  }
-
   .titles p span,
   .titles p {
     font-size: 23px;
@@ -91,9 +84,6 @@
 }
 
 @media (max-width: 900px) {
-  .titles h1 {
-    font-size: 80px;
-  }
   .lessons .lessonBlock {
     width: 47%;
     gap: 20px;
@@ -116,9 +106,7 @@
     align-items: start;
     margin-top: 20px;
   }
-  .titles h1 {
-    text-align: left !important;
-  }
+
   .titles p {
     width: 100%;
     margin-top: 10px;
@@ -128,6 +116,10 @@
   }
   .lessons .lessonBlock p {
     font-size: 18px;
+  }
+  .titles svg {
+    width: 40%;
+    margin-bottom: 20px;
   }
 }
 
@@ -143,11 +135,7 @@
     font-size: 15px;
   }
 }
-@media (max-width: 400px) {
-  .titles h1 {
-    font-size: 60px;
-  }
-}
+
 @media (max-width: 360px) {
   .titles p span,
   .titles p {

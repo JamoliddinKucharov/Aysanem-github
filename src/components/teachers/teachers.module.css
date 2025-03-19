@@ -13,22 +13,20 @@
 .teachers .bg {
   position: absolute;
   z-index: -1;
-  right: -100px;
+  right: -120px;
   transform: rotate(30deg);
+  top: 120px;
 }
 
 .teachers .bg img {
   width: 700px;
 }
 
-.teachers .title h1 {
-  font-size: 130px;
-  color: var(--black);
-  font-family: "Big Shoulders", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
+.teachers .title svg {
+  height: auto;
+  width: 30%;
   margin-bottom: 50px;
-  margin-top: 110px;
+  margin-top: 50px;
 }
 
 .teacher img {
@@ -71,13 +69,12 @@
   }
 }
 @media (max-width: 1000px) {
-  .teachers .title h1 {
-    font-size: 100px;
-    margin-bottom: 50px;
-    margin-top: 110px;
+  .teachers .bg {
+    top: 90px;
+    right: -100px;
   }
   .teachers .bg img {
-    width: 600px;
+    width: 500px;
   }
 }
 @media (max-width: 900px) {
@@ -91,36 +88,42 @@
   .teacher img {
     margin-bottom: 15px;
   }
-
-  .teachers .title h1 {
-    font-size: 80px;
-    margin-bottom: 40px;
-    margin-top: 80px;
-  }
   .teachers .bg {
-    right: -170px;
+    top: 90px;
+    right: -50px;
   }
   .teachers .bg img {
-    width: 500px;
+    width: 400px;
+  }
+
+  .teachers .title svg {
+    width: 40%;
   }
 }
 
+@media (max-width: 500px) {
+  .teachers .bg {
+    top: 120px;
+    right: -150px;
+    transform: rotate(50deg);
+  }
+  .teachers .bg img {
+    width: 350px;
+  }
+
+  .teachers .title svg {
+    width: 50%;
+  }
+}
 @media (max-width: 400px) {
   .teacher p {
     font-size: 13px;
   }
   .teacher h4 {
-    font-size: 26px;
+    font-size: 24px;
     height: 85px;
   }
   .teacher img {
     margin-bottom: 15px;
-  }
-  .teachers .title h1 {
-    font-size: 60px;
-  }
- 
-  .teachers .bg img {
-    width: 400px;
   }
 }
