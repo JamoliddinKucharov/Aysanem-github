@@ -13,7 +13,15 @@ const Footer = React.memo(() => {
         <p>
           Aysanem Yusupovaning “InstaLady” nomli akademiyasining rasmiy sayti
         </p>
-        <span>Product by Mainstream ProCent</span>
+        <span>
+          Product by{" "}
+          <Link
+            target="_blank"
+            to={"https://www.instagram.com/mainstream_global/"}
+          >
+            Mainstream ProCent
+          </Link>
+        </span>
       </div>
     </div>
   );

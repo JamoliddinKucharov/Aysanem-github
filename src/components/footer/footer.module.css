@@ -41,6 +41,9 @@
   display: block;
 }
 
+.footer span a {
+  color: var(--red);
+}
 @media (max-width: 1100px) {
   .footer h2 {
     font-size: 30px;
