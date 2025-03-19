@@ -2,12 +2,22 @@ import React, { useState } from "react";
 import styles from "./calculator.module.css";
 
 const Calculator = React.memo(() => {
-  const [clients, setClients] = useState(3);
+  const [clients, setClients] = useState("0");
   const [profitPerClient, setProfitPerClient] = useState(3000000);
-  const totalProfit = clients * profitPerClient;
+  const totalProfit = Number(clients) * profitPerClient;
 
   const formatNumber = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
+
+  const handleClientsChange = (e) => {
+    const value = e.target.value;
+
+    if (value === "") {
+      setClients(0);
+    } else {
+      setClients(Number(value).toString());
+    }
   };
 
   return (
@@ -24,7 +34,7 @@ const Calculator = React.memo(() => {
                 <input
                   type="number"
                   value={clients}
-                  onChange={(e) => setClients(Number(e.target.value))}
+                  onChange={handleClientsChange}
                 />
               </div>
               <p>Mijozlar soni</p>
@@ -53,7 +63,7 @@ const Calculator = React.memo(() => {
           </div>
         </div>
         <p className={styles.bottom}>
-          Odatda 1 mutaxassis 3 000 000 so‘m o‘rtacha chek bilan 5 tagacha
+          Odatda 1 mutaxassis 3 000 000 so‘mdan o‘rtacha chek bilan 5 tagacha
           mijozni yuritadi, lekin daromad
           <span>
             sizning ko‘nikmalaringizga qarab yanada yuqori bo‘lishi mumkin.

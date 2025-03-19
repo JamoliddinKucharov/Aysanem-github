@@ -141,6 +141,9 @@
     padding: 40px 20px;
     margin-top: 40px;
   }
+  .calculator {
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 450px) {

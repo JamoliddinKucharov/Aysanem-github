@@ -3,7 +3,12 @@ import styles from "./tostart.module.css";
 import { Link } from "react-router-dom";
 
 const ToStart = React.memo(() => {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -18,25 +23,39 @@ const ToStart = React.memo(() => {
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((difference / (1000 * 60)) % 60);
+      const seconds = Math.floor((difference / 1000) % 60);
 
-      setTimeLeft({ days, hours, minutes });
+      setTimeLeft({ days, hours, minutes, seconds });
     };
 
     calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 60000);
+    const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
+  const formatNumber = (number) => (number < 10 ? `0${number}` : number);
+
   return (
     <div className="container">
       <div className={styles.toStart}>
-        <h4>Startga:</h4>
+        <div className={styles.header}>
+          <h4>Startga:</h4>
+        </div>
+        <span className={styles.days}>{timeLeft.days} -kun </span>
         <h1>
-          <span>{timeLeft.days}</span> kun <span>{timeLeft.hours}</span> soat{" "}
-          <span>{timeLeft.minutes}</span> daqiqa
+          <span className={styles.titles}>{formatNumber(timeLeft.hours)}</span>:
+          <span className={styles.titles}>
+            {formatNumber(timeLeft.minutes)}
+          </span>
+          :
+          <span className={styles.titles}>
+            {formatNumber(timeLeft.seconds)}
+          </span>
         </h1>
-        <Link to={"https://t.me/aysanem_private_bot"} target="_blank">SMM KASBINI EGALLASH</Link>
+        <Link to={"https://t.me/aysanem_private_bot"} target="_blank">
+          SMM KASBINI EGALLASH
+        </Link>
       </div>
     </div>
   );

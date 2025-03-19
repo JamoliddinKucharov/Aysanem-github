@@ -12,15 +12,40 @@
   background-color: var(--white);
   font-size: 40px;
   border-radius: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  font-weight: 700;
 }
-
+.toStart h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
 .toStart h1,
 .toStart span {
   font-weight: 700;
   font-size: 88px;
   color: var(--white);
 }
+.toStart h1 span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+}
+.days {
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.toStart h1 .titles {
+  padding: 20px;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 20px;
+}
+
 .toStart a {
   margin-top: 31px;
   padding: 40px 120px;
@@ -28,7 +53,7 @@
   cursor: pointer;
   border: none;
   font-family: Gilroy;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 45px;
   display: inline-block;
   color: var(--black);
@@ -54,6 +79,11 @@
     padding: 30px 70px;
     font-size: 30px;
   }
+
+  .toStart h1 span {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -75,23 +105,32 @@
     padding: 20px 50px;
     font-size: 20px;
   }
+  .toStart h1 span {
+    width: 80px;
+    height: 80px;
+  }
 }
 @media (max-width: 500px) {
   .toStart h4 {
-    font-size: 22px;
+    font-size: 20px;
     width: 150px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   .toStart h1,
   .toStart span {
     font-size: 25px;
+    margin-bottom: 0;
   }
   .toStart a {
     margin-top: 15px;
     padding: 15px 40px;
-    font-size: 18px;
+    font-size: 15px;
   }
   .toStart {
     padding: 30px 0;
+  }
+  .toStart h1 span {
+    width: 60px;
+    height: 60px;
   }
 }
