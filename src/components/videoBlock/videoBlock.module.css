@@ -4,6 +4,7 @@
   text-align: center;
   padding-top: 81px;
   padding-bottom: 123px;
+  position: relative;
 }
 .videoBlock h1 {
   font-weight: 400;
@@ -25,6 +26,7 @@
   height: 640px;
   border-radius: 30px;
   overflow: hidden;
+  display: inline-block;
 }
 
 .videoBlock .video .poster {
@@ -49,6 +51,17 @@
   background-color: var(--red);
   border-radius: 50%;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+.videoBlock .video .play.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 1450px) {
