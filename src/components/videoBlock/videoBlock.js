@@ -27,6 +27,8 @@ const VideoBlock = React.memo(() => {
             src="/assets/video/Асия - Как Ты Там (LIVE @ Авторадио).mp4"
             poster="/assets/images/poster.png"
             controls={false}
+            playsInline
+            webkit-playsinline="true"
           />
           <div
             className={`${styles.play} ${isPlaying ? styles.hidden : ""}`}
