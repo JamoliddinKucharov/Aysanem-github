@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./teachers.module.css";
 import Teacher from "./teacher";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import "swiper/css/autoplay";
+import { Pagination, Autoplay } from "swiper/modules";
 
 const Teachers = React.memo(() => {
   const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView());
@@ -15,18 +16,6 @@ const Teachers = React.memo(() => {
     if (window.innerWidth > 650) return 3;
     return 2;
   }
-
-  useEffect(() => {
-    const handleResize = () => {
-      setSlidesPerView(getSlidesPerView());
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const [teachersList, setTeachersList] = useState([
     {
@@ -103,8 +92,14 @@ const Teachers = React.memo(() => {
             slidesPerView={slidesPerView}
             spaceBetween={20}
             pagination={false}
-            modules={[Pagination]}
             className="mySwiper"
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
+            speed={1000}
+            modules={[Pagination, Autoplay]}
+            loop={true}
           >
             {teachersList.map((item, index) => (
               <SwiperSlide key={index}>
