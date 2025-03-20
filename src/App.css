@@ -57,6 +57,7 @@ button {
 
 body {
   overflow-x: hidden;
+  background: var(--white);
 }
 
 input::-webkit-outer-spin-button,
