@@ -8,7 +8,7 @@ const Footer = React.memo(() => {
       <div className="container">
         <div className={`row ${styles.row}`}>
           <h2>Qiziqtirgan savollaringiz bo‘lsa </h2>
-          <Link to={"https://t.me/aysanem_private_bot"}  target="_blank">tugmani bosing</Link>
+          <Link to={"https://t.me/instalady_uz"}  target="_blank">tugmani bosing</Link>
         </div>
         <p>
           Aysanem Yusupovaning “InstaLady” nomli akademiyasining rasmiy sayti

@@ -1,15 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { lazy, useContext } from "react";
-import { GlobalContext } from "./context/globalState";
+import { lazy } from "react";
 
 // Pages
-const Home = lazy(() => import("./page/home/home"));
-const Video = lazy(() => import("./components/video/video"));
+const Home = lazy(() => import("./page/home/home")); 
 const Footer = lazy(() => import("./components/footer/footer"));
 
 function App() {
-  const { videoHandler } = useContext(GlobalContext);
 
   return (
     <div className="project-main">
@@ -17,7 +14,6 @@ function App() {
         <Route path="/" element={<Home />} />
       </Routes>
       <Footer />
-      {videoHandler && <Video />}
     </div>
   );
 }

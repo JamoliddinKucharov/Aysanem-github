@@ -42,7 +42,7 @@ const ToStart = React.memo(() => {
         <div className={styles.header}>
           <h4>Startga:</h4>
         </div>
-        <span className={styles.days}>{timeLeft.days} -kun </span>
+        <span className={styles.days}>{timeLeft.days}-kun </span>
         <h1>
           <span className={styles.titles}>{formatNumber(timeLeft.hours)}</span>:
           <span className={styles.titles}>
