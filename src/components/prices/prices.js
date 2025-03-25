@@ -77,6 +77,39 @@ const Prices = React.memo(() => {
                         </div>
                     </div>
                 </div>
+
+                <div className={styles.payBlock}>
+                    <div className={styles.payRow}>
+                        <div className={styles.left}>
+                            <h3>Kursni harid qilish</h3>
+                            <div  className={styles.payIcons}>
+                                <div className={styles.pay}>
+                                    <img src="/assets/images/payme.png" alt="" />
+                                </div>
+                                <div className={styles.pay}>
+                                    <img src="/assets/images/click.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.right}>
+                            <h3>Kursni nasiyaga harid qilish</h3>
+                            <div className={styles.payIcons}>
+                                <div className={styles.pay}>
+                                    <img src="/assets/images/uzum.png" alt="" />
+                                </div>
+                                <div className={styles.pay}>
+                                    <img src="/assets/images/tbc.png" alt="" />
+                                </div>
+                                <div className={styles.pay}>
+                                    <img src="/assets/images/anorbank.png" alt="" />
+                                </div>
+                                <div className={styles.pay}>
+                                    <img src="/assets/images/alif.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

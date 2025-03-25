@@ -96,6 +96,58 @@
   color: var(--black);
 }
 
+.payBlock {
+  border-radius: 30px;
+  background: #e6e6e6;
+  border: 4px solid #ffffff;
+  padding: 30px 60px 50px;
+  margin-bottom: 30px;
+}
+
+.payBlock .pay {
+  width: 240px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  border-radius: 15px;
+  cursor: pointer;
+}
+.payBlock .pay img {
+  max-height: 40px;
+  max-width: 60%;
+}
+.payBlock .payRow {
+  display: flex;
+}
+.payBlock .payRow .left {
+  border-right: 2px solid var(--white);
+  padding-right: 40px;
+  margin-right: 40px;
+}
+.payBlock .payRow .left .payIcons {
+  flex-wrap: nowrap;
+}
+.payBlock .payIcons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.payBlock h3 {
+  font-weight: 500;
+  font-size: 35px;
+  font-family: Gilroy;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1562px) {
+  .payBlock .pay {
+    width: 210px;
+    height: 70px;
+  }
+}
 @media (max-width: 1500px) {
   .prices .price {
     width: 32%;
@@ -107,6 +159,10 @@
 @media (max-width: 1405px) {
   .prices .price {
     width: 31%;
+  }
+  .payBlock .pay {
+    width: 175px;
+    height: 60px;
   }
   .prices .price .bottom h1 {
     font-size: 38px;
@@ -124,6 +180,25 @@
 
   .prices .price .bottom h3 {
     font-size: 20px;
+  }
+}
+@media (max-width: 1205px) {
+  .payBlock .pay {
+    width: 155px;
+    height: 55px;
+  }
+
+  .payBlock {
+    padding: 25px 50px 40px;
+  }
+
+  .payBlock h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  .payBlock .payRow .left {
+    margin-right: 20px;
+    padding-right: 20px;
   }
 }
 @media (max-width: 1170px) {
@@ -173,6 +248,18 @@
     padding: 15px 0;
     font-size: 20px;
   }
+
+  .payBlock .payRow {
+    flex-direction: column;
+  }
+  .payBlock .payRow .left {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 2px solid var(--white);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 670px) {
@@ -184,6 +271,18 @@
   }
   .title {
     padding: 15px 0;
+  }
+
+  .payBlock .pay {
+    width: 47%;
+    height: 60px;
+    border-radius: 7px;
+  }
+  .payBlock h3 {
+    font-size: 17px;
+  }
+  .payBlock {
+    padding: 20px 30px 40px;
   }
 }
 
@@ -202,9 +301,17 @@
   }
 
   .prices .price h4 {
-    font-size: 30px;
+    font-size: 35px;
   }
   .prices .price .bottom a {
     font-size: 15px;
+  }
+  .payBlock .pay {
+    width: 46%;
+    height: 48px;
+    border-radius: 7px;
+  }
+  .payBlock .payIcons {
+    gap: 15px;
   }
 }
