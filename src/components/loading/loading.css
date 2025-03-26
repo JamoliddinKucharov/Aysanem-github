@@ -1,9 +1,9 @@
 .loadingIcon {
-  width: 300px;
+  width: 100px;
 }
 
 @media (max-width: 450px) {
   .loadingIcon {
-    width: 70%;
+    width: 60px;
   }
 }
