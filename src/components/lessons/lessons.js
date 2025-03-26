@@ -25,35 +25,313 @@ const Gifts = React.memo(() => {
           </p>
         </div>
         <div className={`row ${styles.row}`}>
-          <div className={styles.lessonBlock}>
-            <h1>1 </h1> <p>SMM asoslari</p>
+          <div className={styles.left}>
+            <div className={`${styles.block} ${styles.one}`}>
+              <div className={styles.title}>
+                <h2>1 Blok</h2>
+              </div>
+              <h3>SMM asoslari</h3>
+              <ul>
+                <p><span>• SMM ga kirish</span></p>
+                <p>- SMM nima va u nima uchun kerak?  </p>
+                <p>- Ijtimoiy tarmoqlar va algoritmlar qanday ishlaydi?  </p>
+                <p>- SMM'da qanday imkoniyatlar bor?  </p>
+              </ul>
+              <ul>
+                <p><span>• Kontent strategiyasi </span></p>
+                <p>- Shaxsiy brend va pozitsiyalash qanday yaratiladi?  </p>
+                <p>- Maqsadli auditoriyani aniqlash: sening odaming kim?  </p>
+                <p>- Blog/proekt mavzusini qanday tanlash kerak?  </p>
+              </ul>
+              <ul>
+                <p><span>• Profilni bezash</span></p>
+                <p>- Sotuvchi akkauntni qanday yaratish mumkin?  </p>
+                <p>- Biografiya, avatar, havolalar – nima muhim?  </p>
+                <p>- Profil sarlavhasi, mahkamlab qo‘yilgan storislar  </p>
+              </ul>
+              <ul>
+                <p><span>• Trendli kontent yaratish </span></p>
+                <p>- Hozir SMM'da nima ommabop?  </p>
+                <p>- Trendlarni qayerdan topish mumkin?  </p>
+                <p>- Trendlarni o‘z mavzusingga moslashtirish  </p>
+              </ul>
+              <ul>
+                <p><span>• Stories: auditoriyani qanday jalb qilish mumkin? </span></p>
+                <p>- Storis turlari: interaktiv, sotuvchi, jalb qiluvchi  </p>
+                <p>- Storislarni suratga olish, montaj qilish va bezash  </p>
+                <p>- Har kuni storis uchun 10 ta g‘oya  </p>
+              </ul>
+              <ul>
+                <p><span>• Telegram kanalini yuritish </span></p>
+                <p>- Telegram'da targ‘ibot asoslari  </p>
+                <p>- Kontentni qayerdan olish va nimalarni e’lon ilish kerak?</p>
+                <p>- Qamrovni qanday oshirish mumkin?  </p>
+              </ul>
+              <ul>
+                <p><span>• Bir oyga kontent-reja tuzish  </span></p>
+                <p>- Postlar va storislar uchun g‘oyalarni qayerdan topish mumkin?  </p>
+                <p>- Charchab qolmaslik va ko‘p vaqt sarflamaslik  </p>
+                <p>- Turli sohalar uchun kontent-reja namunasi</p>
+              </ul>
+            </div>
+            <div className={`${styles.block} ${styles.four}`}>
+              <div className={styles.title}>
+                <h2>4 Blok</h2>
+              </div>
+              <h3>Kopirayting</h3>
+              <ul>
+                <p><span>• Qanday qilib auditoriyani jalb qiluvchi matnlar yozish mumkin?  </span></p>
+                <p>- Zo‘r postlar yozish uchun formulalar   </p>
+                <p>- Qanday yozish kerakki, odamlar oxirigacha o‘qisin?  </p>
+                <p>- Matn orqali sotishni qanday amalga oshirish mumkin?  </p>
+              </ul>
+              <ul>
+                <p><span>• Sotuvchi postlar va storislar yozish   </span></p>
+                <p>- Mukammal sotuvchi post formulasi   </p>
+                <p>- Agresiyasiz storis orqali qanday sotish mumkin?  </p>
+                <p>- Xatolar, tufayli hech kim sotib olmaydi   </p>
+              </ul>
+              <ul>
+                <p><span>• Salbiy fikrlar va heyt bilan qanday ishlash kerak?  </span></p>
+                <p>- Tanqidlarga to‘g‘ri javob berish usullari   </p>
+                <p>- Qachon izohlarni o‘chirish va qachon javob berish kerak?   </p>
+                <p>- Heytdan qanday qo‘rqmaslik mumkin?  </p>
+              </ul>
+            </div>
+            <div className={`${styles.block} ${styles.five}`}>
+              <div className={styles.title}>
+                <h2>5 Blok</h2>
+              </div>
+              <h3>Target va reklama</h3>
+              <ul>
+                <p><span>• Reklama uchun kreativlarni qanday yaratish kerak? </span></p>
+                <p> Reklama uchun banner yoki video qanday
+                  ayyorlanadi?   </p>
+                <p> G‘oyalar va ilhomni qayerdan topish mumkin?   </p>
+                <p>- Telefonda kreativ yaratish uchun eng yaxshi vositalar    </p>
+              </ul>
+              <ul>
+                <p><span>• Targetlangan reklamani qanday ishga tushirish kerak?   </span></p>
+                <p> Instagram'da target reklamaning asoslari   </p>
+                <p> Telefonda reklamani to‘g‘ri sozlash   </p>
+                <p> Target byudjetni yo‘q qilishga olib keladigan xatolar </p>
+              </ul>
+              <ul>
+                <p><span>• Profilni bezash</span></p>
+                <p>- Sotuvchi akkauntni qanday yaratish mumkin?  </p>
+                <p>- Biografiya, avatar, havolalar – nima muhim?  </p>
+                <p>- Profil sarlavhasi, mahkamlab qo‘yilgan storislar  </p>
+              </ul>
+
+            </div>
+            <div className={`${styles.block} ${styles.seven}`}>
+              <div className={styles.title}>
+                <h2>7 Blok</h2>
+              </div>
+              <h3>Mijozlar va daromad</h3>
+              <ul>
+                <p><span>• Muvaffaqiyatli SMM-mutaxassisining chek-listi </span></p>
+                <p>- SMM-menejerga qanday ko‘nikmalar kerak?    </p>
+                <p>- Ishni qanday tizimlashtirish va charchashdan qochish?   </p>
+                <p>- Qanday xatolarga yo‘l qo‘ymaslik kerak?   </p>
+              </ul>
+              <ul>
+                <p><span>• SMM'da mijozlarni qanday topish mumkin?  </span></p>
+                <p>- Birinchi mijozlarni qayerdan izlash kerak?   </p>
+                <p>- Xizmatlaringni to‘g‘ri taklif qilish usullari   </p>
+                <p>- Tajriba bo‘lmasa ham kuchli portfolio
+                  yaratish </p>
+              </ul>
+              <ul>
+                <p><span>• Mijozlar bilan ishlash va motivatsiyani yo‘qotmaslik</span></p>
+                <p>- Mijozlar bilan qanday to‘g‘ri ishlash kerak?   </p>
+                <p>- Zaharli buyurtmachilarni qanday tanib olish va oldini olish?   </p>
+                <p>- Hammasiga ulgurish uchun kunni qanday tashkil qilish kerak?  </p>
+              </ul>
+              <ul>
+                <p><span>•  Xizmat narxini qanday oshirish mumkin? </span></p>
+                <p>- O‘z qadriyatini qanday aniqlash kerak?  </p>
+                <p>- Mijozga nega qimmatligini qanday tushuntirish mumkin?  </p>
+                <p>- Arzon mutaxassislar qanday xatolarga yo‘l qo‘yadi?    </p>
+              </ul>
+              <ul>
+                <p><span>• Yakuniy dars: SMM'dagi shaxsiy strategiyang  </span></p>
+                <p>- O‘rgangan barcha bilimlarni qanday qo‘llash kerak?   </p>
+                <p>- Birinchi qadamlar qanday bo‘lishi kerak?    </p>
+                <p>- Motivatsiyani yo‘qotmaslik va natijaga erishish yo‘llari   </p>
+              </ul>
+            </div>
           </div>
-          <div className={styles.lessonBlock}>
-            <h1>6 </h1> <p>Sotuvga yo‘naltirilgan kopirayting</p>
-          </div>
-          <div className={styles.lessonBlock}>
-            <h1>2 </h1> <p>Mobilografiya</p>
-          </div>
-          <div className={styles.lessonBlock}>
-            <h1>7 </h1> <p>Strategiyani shakllantirish</p>
-          </div>
-          <div className={styles.lessonBlock}>
-            <h1>3 </h1> <p>Aysanemdan ekspert darslari</p>
-          </div>
-          <div className={styles.lessonBlock}>
-            <h1>8 </h1> <p>Bloggerlar bilan ishlash</p>
-          </div>
-          <div className={styles.lessonBlock}>
-            <h1>4 </h1> <p>Telefon orqali fotosuratga olish</p>
-          </div>
-          <div className={styles.lessonBlock}>
-            <h1>9 </h1> <p>Chiroyli nutq bo‘yicha darslar</p>
-          </div>
-          <div className={styles.lessonBlock}>
-            <h1>5</h1> <p>Sun'iy intellekt bilan ishlash</p>
-          </div>
-          <div className={styles.lessonBlock}>
-            <h1>10</h1> <p>Mijozlar bilan ishlash</p>
+          <div className={styles.right}>
+            <div className={`${styles.block} ${styles.two}`}>
+              <div className={styles.title}>
+                <h2>2 Blok</h2>
+              </div>
+              <h3>Shaxsiy brend</h3>
+              <ul>
+                <p><span>• Birinchi 1000 obunachini qanday yig‘ish mumkin?  </span></p>
+                <p>- Bepul va xavfsiz targ‘ibot usullari  </p>
+                <p>- Hamkorlik va o‘zaro piarni qanday tashkil qilish kerak?  </p>
+                <p>- Obunachilarni kontentingni bo‘lishishga qanday ndash mumkin?  </p>
+              </ul>
+              <ul>
+                <p><span>• Blogerlar bilan ishlash   </span></p>
+                <p>- Hamkorlik uchun blogerlarni qanday topish kerak?   </p>
+                <p>- Reklama bo‘yicha to‘g‘ri kelishish yo‘llari   </p>
+                <p>- Yangi boshlovchilar qanday xatolarga yo‘l qo‘yadi?   </p>
+              </ul>
+              <ul>
+                <p><span>• Jonli efirlar va auditoriyani jalb qilish  </span></p>
+                <p>- Jonli efirlarni qanday to‘g‘ri o‘tkazish kerak?   </p>
+                <p>- Muvaffaqiyatli mavzular   </p>
+                <p>- Efirga qanday tayyorlanish va qo‘rqmaslik?   </p>
+              </ul>
+              <ul>
+                <p><span>• SMM'ni qanday monetizatsiya qilish mumkin?  </span></p>
+                <p>- Daromad olishning 5 real usuli   </p>
+                <p>- Kichik blog bilan ham pul ishlashni qanday boshlash mumkin?  </p>
+                <p>- Daromad olishga halal beradigan xatolar   </p>
+              </ul>
+              <ul>
+                <p><span>• Avtovoronka va progrev orqali sotish   </span></p>
+                <p>- Voronka nima va u qanday ishlaydi?   </p>
+                <p>- Auditoriyani xarid qilishga qanday tayyorlash kerak?   </p>
+                <p>- Storis orqali sotuvni qanday to‘g‘ri yo‘lga qo‘yish mumkin? </p>
+              </ul>
+
+            </div>
+            <div className={`${styles.block} ${styles.three}`}>
+              <div className={styles.title}>
+                <h2>3 Blok</h2>
+              </div>
+              <h3>Mobilografiya</h3>
+              <ul>
+                <p><span>• Mobil fotosuratga olish (mobilografiya) </span></p>
+                <p> Telefonda ajoyib suratlarni qanday tushirish mumkin?    </p>
+                <p> Yorug‘lik, rakurslar, kompozitsiya    </p>
+                <p> Yangi boshlovchilar qiladigan asosiy xatolar    </p>
+              </ul>
+              <ul>
+                <p><span>• Telefon orqali suratlarni tahrirlash va montaj qilish  </span></p>
+                <p> Eng yaxshi bepul tahrirlash ilovalari    </p>
+                <p> Instagram uchun uslubiy vizual yaratish    </p>
+                <p> Rang tuzatish, filtrlar, presetlar   </p>
+              </ul>
+              <ul>
+                <p><span>• Reels turlari va ularni yaratish  </span></p>
+                <p> Qaysi Reels eng ko‘p ko‘rish to‘playdi?    </p>
+                <p> Trendlar tahlili: hozirgi eng ommabop formatlar   </p>
+                <p> Ssenariy, suratga olish, montaj   </p>
+              </ul>
+              <ul>
+                <p><span>• Video-kontent (asoslar)   </span></p>
+                <p> Nega video ijtimoiy tarmoqlarda asosiy vositadir?    </p>
+                <p> Qanday qilib zo‘r Reels va TikTok videolarini suratga olish mumkin?    </p>
+                <p> Suratga olishda eng ko‘p uchraydigan xatolar    </p>
+              </ul>
+              <ul>
+                <p><span>• Telefonda video montaj qilish   </span></p>
+                <p> Eng yaxshi bepul montaj ilovalari  </p>
+                <p> Videolarni qanday kesish, matn va effektlar qo‘shish    </p>
+                <p> Musiqa va trendli tovushlar  </p>
+              </ul> 
+            </div>
+            <div className={`${styles.block} ${styles.six}`}>
+              <div className={styles.title}>
+                <h2>1 Blok</h2>
+              </div>
+              <h3>SMM asoslari</h3>
+              <ul>
+                <p><span>• SMM ga kirish</span></p>
+                <p>- SMM nima va u nima uchun kerak?  </p>
+                <p>- Ijtimoiy tarmoqlar va algoritmlar qanday ishlaydi?  </p>
+                <p>- SMM'da qanday imkoniyatlar bor?  </p>
+              </ul>
+              <ul>
+                <p><span>• Kontent strategiyasi </span></p>
+                <p>- Shaxsiy brend va pozitsiyalash qanday yaratiladi?  </p>
+                <p>- Maqsadli auditoriyani aniqlash: sening odaming kim?  </p>
+                <p>- Blog/proekt mavzusini qanday tanlash kerak?  </p>
+              </ul>
+              <ul>
+                <p><span>• Profilni bezash</span></p>
+                <p>- Sotuvchi akkauntni qanday yaratish mumkin?  </p>
+                <p>- Biografiya, avatar, havolalar – nima muhim?  </p>
+                <p>- Profil sarlavhasi, mahkamlab qo‘yilgan storislar  </p>
+              </ul>
+              <ul>
+                <p><span>• Trendli kontent yaratish </span></p>
+                <p>- Hozir SMM'da nima ommabop?  </p>
+                <p>- Trendlarni qayerdan topish mumkin?  </p>
+                <p>- Trendlarni o‘z mavzusingga moslashtirish  </p>
+              </ul>
+              <ul>
+                <p><span>• Stories: auditoriyani qanday jalb qilish mumkin? </span></p>
+                <p>- Storis turlari: interaktiv, sotuvchi, jalb qiluvchi  </p>
+                <p>- Storislarni suratga olish, montaj qilish va bezash  </p>
+                <p>- Har kuni storis uchun 10 ta g‘oya  </p>
+              </ul>
+              <ul>
+                <p><span>• Telegram kanalini yuritish </span></p>
+                <p>- Telegram'da targ‘ibot asoslari  </p>
+                <p>- Kontentni qayerdan olish va nimalarni e’lon ilish kerak?</p>
+                <p>- Qamrovni qanday oshirish mumkin?  </p>
+              </ul>
+              <ul>
+                <p><span>• Bir oyga kontent-reja tuzish  </span></p>
+                <p>- Postlar va storislar uchun g‘oyalarni qayerdan topish mumkin?  </p>
+                <p>- Charchab qolmaslik va ko‘p vaqt sarflamaslik  </p>
+                <p>- Turli sohalar uchun kontent-reja namunasi</p>
+              </ul>
+            </div>
+            <div className={`${styles.block} ${styles.bonus}`}>
+              <div className={styles.title}>
+                <h2>1 Blok</h2>
+              </div>
+              <h3>SMM asoslari</h3>
+              <ul>
+                <p><span>• SMM ga kirish</span></p>
+                <p>- SMM nima va u nima uchun kerak?  </p>
+                <p>- Ijtimoiy tarmoqlar va algoritmlar qanday ishlaydi?  </p>
+                <p>- SMM'da qanday imkoniyatlar bor?  </p>
+              </ul>
+              <ul>
+                <p><span>• Kontent strategiyasi </span></p>
+                <p>- Shaxsiy brend va pozitsiyalash qanday yaratiladi?  </p>
+                <p>- Maqsadli auditoriyani aniqlash: sening odaming kim?  </p>
+                <p>- Blog/proekt mavzusini qanday tanlash kerak?  </p>
+              </ul>
+              <ul>
+                <p><span>• Profilni bezash</span></p>
+                <p>- Sotuvchi akkauntni qanday yaratish mumkin?  </p>
+                <p>- Biografiya, avatar, havolalar – nima muhim?  </p>
+                <p>- Profil sarlavhasi, mahkamlab qo‘yilgan storislar  </p>
+              </ul>
+              <ul>
+                <p><span>• Trendli kontent yaratish </span></p>
+                <p>- Hozir SMM'da nima ommabop?  </p>
+                <p>- Trendlarni qayerdan topish mumkin?  </p>
+                <p>- Trendlarni o‘z mavzusingga moslashtirish  </p>
+              </ul>
+              <ul>
+                <p><span>• Stories: auditoriyani qanday jalb qilish mumkin? </span></p>
+                <p>- Storis turlari: interaktiv, sotuvchi, jalb qiluvchi  </p>
+                <p>- Storislarni suratga olish, montaj qilish va bezash  </p>
+                <p>- Har kuni storis uchun 10 ta g‘oya  </p>
+              </ul>
+              <ul>
+                <p><span>• Telegram kanalini yuritish </span></p>
+                <p>- Telegram'da targ‘ibot asoslari  </p>
+                <p>- Kontentni qayerdan olish va nimalarni e’lon ilish kerak?</p>
+                <p>- Qamrovni qanday oshirish mumkin?  </p>
+              </ul>
+              <ul>
+                <p><span>• Bir oyga kontent-reja tuzish  </span></p>
+                <p>- Postlar va storislar uchun g‘oyalarni qayerdan topish mumkin?  </p>
+                <p>- Charchab qolmaslik va ko‘p vaqt sarflamaslik  </p>
+                <p>- Turli sohalar uchun kontent-reja namunasi</p>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

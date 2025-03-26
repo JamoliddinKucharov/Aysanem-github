@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 80px;
   margin-bottom: 45px;
 }
 .titles svg {
@@ -27,25 +26,113 @@
 }
 
 .lessons .row {
-  flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: start;
+  gap: 50px;
 }
-.lessons .lessonBlock {
-  width: 43%;
+.lessons {
+  background: #e6e6e6;
+  border-radius: 30px;
+  margin: 50px 0;
+  padding: 50px 0;
+}
+.lessons .row .left,
+.lessons .row .right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.lessons .row .block {
+  width: 100%;
+  background-size: cover !important;
+  position: relative;
+  border-radius: 20px;
+  padding: 30px 40px;
+  padding-bottom: 50px;
+}
+
+.lessons .row .block.one {
+  background: url("/public/assets/images/blok-1.png") no-repeat;
+}
+.lessons .row .block.two {
+  background: url("/public/assets/images/blok-2.png") no-repeat;
+}
+.lessons .row .block.three {
+  background: url("/public/assets/images/blok-3.png") no-repeat;
+}
+.lessons .row .block.four {
+  background: url("/public/assets/images/blok-4.png") no-repeat;
+}
+.lessons .row .block.five {
+  background: url("/public/assets/images/blok-5.png") no-repeat;
+}
+.lessons .row .block.six {
+  background: url("/public/assets/images/blok-6.png") no-repeat;
+}
+.lessons .row .block.seven {
+  background: url("/public/assets/images/blok-7.png") no-repeat;
+}
+.lessons .row .block.bonus {
+  background: url("/public/assets/images/blok-8.png") no-repeat;
+}
+
+.lessons .row .block.one .title h2,
+.lessons .row .block.five .title h2,
+.lessons .row .block.bonus .title h2 {
+  color: var(--red);
+}
+.lessons .row .block.two .title h2,
+.lessons .row .block.four .title h2 {
+  color: #4870b5;
+}
+.lessons .row .block.three .title h2 {
+  color: #551a75;
+}
+.lessons .row .block.six .title h2 {
+  color: #23a3d1;
+}
+.lessons .row .block.seven .title h2 {
+  color: #009933;
+}
+
+.lessons .row .block .title {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white);
+  width: 250px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  height: 60px;
+  border-radius: 12px;
+}
+.lessons .row .block .title h2 {
+  font-family: Evolventa;
+  font-weight: 700;
+  font-size: 35px;
 }
 
-.lessons .lessonBlock h1 {
-  font-size: 161px;
-  color: var(--blue);
+.lessons .row .block h3 {
+  font-family: Evolventa;
+  font-weight: 700;
+  color: var(--white);
+  font-size: 55px;
+  margin-top: 50px;
 }
-.lessons .lessonBlock p {
-  color: var(--black);
-  font-size: 45px;
+.lessons .row .block ul {
+  margin-top: 30px;
 }
-
+.lessons .row .block ul p {
+  font-family: Evolventa;
+  color: var(--white);
+  font-size: 26px;
+}
+.lessons .row .block ul p span {
+  font-weight: 700;
+  font-size: 26px;
+}
 @media (max-width: 1350px) {
   .titles p {
     width: auto;
@@ -56,18 +143,6 @@
   .titles p {
     font-size: 28px;
   }
-
-  .lessons .lessonBlock {
-    width: 43%;
-    gap: 20px;
-  }
-
-  .lessons .lessonBlock h1 {
-    font-size: 141px;
-  }
-  .lessons .lessonBlock p {
-    font-size: 35px;
-  }
 }
 
 @media (max-width: 1000px) {
@@ -75,28 +150,12 @@
   .titles p {
     font-size: 23px;
   }
-  .lessons .lessonBlock h1 {
-    font-size: 100px;
-  }
-  .lessons .lessonBlock p {
-    font-size: 25px;
-  }
 }
 
 @media (max-width: 900px) {
-  .lessons .lessonBlock {
-    width: 47%;
-    gap: 20px;
-  }
   .titles p span,
   .titles p {
     font-size: 18px;
-  }
-  .lessons .lessonBlock h1 {
-    font-size: 70px;
-  }
-  .lessons .lessonBlock p {
-    font-size: 22px;
   }
 }
 
@@ -111,12 +170,6 @@
     width: 100%;
     margin-top: 10px;
   }
-  .lessons .lessonBlock h1 {
-    font-size: 50px;
-  }
-  .lessons .lessonBlock p {
-    font-size: 18px;
-  }
   .titles svg {
     width: 40%;
     margin-bottom: 20px;
@@ -124,14 +177,8 @@
 }
 
 @media (max-width: 450px) {
-  .lessons .lessonBlock h1 {
-    font-size: 40px;
-  }
   .titles p span,
   .titles p {
-    font-size: 15px;
-  }
-  .lessons .lessonBlock p {
     font-size: 15px;
   }
 }
@@ -140,8 +187,5 @@
   .titles p span,
   .titles p {
     font-size: 12px;
-  }
-  .lessons .lessonBlock p {
-    font-size: 13px;
   }
 }
