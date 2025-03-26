@@ -73,3 +73,40 @@
 .popUp form a {
   text-decoration: underline;
 }
+
+@media (max-width: 980px) {
+  .popUp {
+    width: 90%;
+  }
+}
+
+@media (max-width: 900px) {
+  .popUp {
+    background: rgb(237, 19, 33);
+    background: linear-gradient(
+      149deg,
+      rgba(237, 19, 33, 1) 0%,
+      rgba(20, 11, 32, 1) 35%,
+      rgba(20, 11, 32, 1) 65%,
+      rgba(237, 19, 33, 1) 100%
+    ) !important;
+    padding: 60px 0;
+  }
+
+  .popUp form {
+    width: 90%;
+  }
+  .popUp form button {
+    margin-top: 25px;
+  }
+  .popUp form .checkbox label {
+    font-size: 15px;
+    text-align: left;
+  }
+  .popUp .title {
+    text-align: center;
+  }
+  .popUp .title img {
+    width: 180px;
+  }
+}
