@@ -22,9 +22,10 @@ const Home = React.memo(({ setVideoHandler }) => {
       <Teachers />
       <Lessons />
       <Calculator />
-      <ToStart />
       <GoLesson />
       <Prices />
+      <ToStart />
+
     </div>
   );
 });

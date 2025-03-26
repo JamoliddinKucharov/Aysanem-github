@@ -1,0 +1,74 @@
+.popUp {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url("/public/assets/images/popup-background.png") no-repeat;
+  background-size: cover;
+  z-index: 8;
+  width: 900px;
+  padding: 30px 50px;
+  border-radius: 30px;
+  padding-bottom: 50px;
+}
+.popUp .title img {
+  width: 250px;
+}
+
+.popUp form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.popUp form input {
+  width: 100%;
+  border-radius: 50px;
+  height: 50px;
+  border: none;
+  font-family: Evolventa;
+  outline: none;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--black);
+  font-size: 20px;
+}
+
+.popUp form .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.popUp form .checkbox input {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0;
+}
+
+.popUp form button {
+  padding: 15px 80px;
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+  margin-top: 40px;
+  font-family: Evolventa;
+  font-size: 25px;
+  color: var(--white);
+  background-color: var(--red);
+}
+
+.popUp form label,
+.popUp form .checkbox a {
+  font-family: Evolventa;
+  color: var(--white);
+}
+.popUp form a {
+  text-decoration: underline;
+}

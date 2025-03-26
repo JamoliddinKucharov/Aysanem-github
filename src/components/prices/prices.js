@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./prices.module.css";
 import { Link } from "react-router-dom";
+import { GlobalContext } from "../../context/globalState";
 
 const Prices = React.memo(() => {
+
+    const { popupHandler,
+        setPopuphandler } = useContext(GlobalContext);
+
     return (
         <div className={styles.prices}>
             <div className={styles.title}>
@@ -27,7 +32,7 @@ const Prices = React.memo(() => {
                             <h5>6 800 000 so’m</h5>
                             <h1>2 955 000 <span> so’m</span></h1>
                             <h3>295 500 <span> so’mdan/oyiga</span></h3>
-                            <Link to={"/"}>SMM KASBINI EGALLASH</Link>
+                            <Link to={"#"} onClick={(e) => { setPopuphandler(true) }}>SMM KASBINI EGALLASH</Link>
                         </div>
                     </div>
                     <div className={styles.price}>
@@ -49,7 +54,7 @@ const Prices = React.memo(() => {
                             <h5>9 600 000 so’m</h5>
                             <h1>5 350 000<span> so’m</span></h1>
                             <h3>520 000 <span> so’mdan/oyiga</span></h3>
-                            <Link to={"/"}>SMM KASBINI EGALLASH</Link>
+                            <Link to={"#"} onClick={(e) => { setPopuphandler(true) }}>SMM KASBINI EGALLASH</Link>
                         </div>
                     </div>
                     <div className={styles.price}>
@@ -73,7 +78,7 @@ const Prices = React.memo(() => {
                             <h5>16 900 000 so’m</h5>
                             <h1>8 960 000<span> so’m</span></h1>
                             <h3>900 000<span> so’mdan/oyiga</span></h3>
-                            <Link to={"/"}>SMM KASBINI EGALLASH</Link>
+                            <Link to={"#"} onClick={(e) => { setPopuphandler(true) }}>SMM KASBINI EGALLASH</Link>
                         </div>
                     </div>
                 </div>
@@ -82,7 +87,7 @@ const Prices = React.memo(() => {
                     <div className={styles.payRow}>
                         <div className={styles.left}>
                             <h3>Kursni harid qilish</h3>
-                            <div  className={styles.payIcons}>
+                            <div className={styles.payIcons}>
                                 <div className={styles.pay}>
                                     <img src="/assets/images/payme.png" alt="" />
                                 </div>

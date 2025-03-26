@@ -13,21 +13,21 @@ const ToStart = React.memo(() => {
     const calculateTimeLeft = () => {
       const now = new Date();
       const nextAprilFifteenth = new Date(now.getFullYear(), 3, 10); // 3 - Aprel (0 dan boshlanadi)
-    
+
       if (now > nextAprilFifteenth) {
         nextAprilFifteenth.setFullYear(nextAprilFifteenth.getFullYear() + 1);
       }
-    
+
       const difference = nextAprilFifteenth - now;
-    
+
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((difference / (1000 * 60)) % 60);
       const seconds = Math.floor((difference / 1000) % 60);
-    
+
       setTimeLeft({ days, hours, minutes, seconds });
     };
-    
+
 
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
@@ -41,7 +41,7 @@ const ToStart = React.memo(() => {
     <div className="container">
       <div className={styles.toStart}>
         <div className={styles.header}>
-          <h4>Startga:</h4>
+          <h4>Narxlar oshishiga:</h4>
         </div>
         <span className={styles.days}>{timeLeft.days}-kun </span>
         <h1>
