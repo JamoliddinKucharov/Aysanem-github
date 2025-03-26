@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./lessons.module.css";
 
 const Gifts = React.memo(() => {
+  const [isVisible, setIsVisible] = useState(true);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 900) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className={styles.lessons}>
       <div className="container">
@@ -24,7 +43,8 @@ const Gifts = React.memo(() => {
             insaydlar va ekspert fikrlari bilan.
           </p>
         </div>
-        <div className={`row ${styles.row}`}>
+        {isVisible ?  
+        <div className={`row ${styles.row} ${styles.rowPC}`}>
           <div className={styles.left}>
             <div className={`${styles.block} ${styles.one}`}>
               <div className={styles.title}>
@@ -234,106 +254,328 @@ const Gifts = React.memo(() => {
                 <p> Eng yaxshi bepul montaj ilovalari  </p>
                 <p> Videolarni qanday kesish, matn va effektlar qo‘shish    </p>
                 <p> Musiqa va trendli tovushlar  </p>
-              </ul> 
+              </ul>
             </div>
             <div className={`${styles.block} ${styles.six}`}>
               <div className={styles.title}>
-                <h2>1 Blok</h2>
+                <h2>6 Blok</h2>
               </div>
-              <h3>SMM asoslari</h3>
+              <h3>Aysanemxondan <br /> expertli darslar</h3>
               <ul>
-                <p><span>• SMM ga kirish</span></p>
-                <p>- SMM nima va u nima uchun kerak?  </p>
-                <p>- Ijtimoiy tarmoqlar va algoritmlar qanday ishlaydi?  </p>
-                <p>- SMM'da qanday imkoniyatlar bor?  </p>
+                <p><span>• Kamerada ishonch bilan ishlash </span></p>
+                <p>- Kameradan qo‘rqishni qanday yengish kerak?    </p>
+                <p>- Qo‘llar va hissiyotlarni qanday boshqarish kerak?  </p>
+                <p>- Ob’ektivga qanday qarash kerak, shunda tomoshabinlarni o‘ziga jalb qilish mumkin?   </p>
               </ul>
               <ul>
-                <p><span>• Kontent strategiyasi </span></p>
-                <p>- Shaxsiy brend va pozitsiyalash qanday yaratiladi?  </p>
-                <p>- Maqsadli auditoriyani aniqlash: sening odaming kim?  </p>
-                <p>- Blog/proekt mavzusini qanday tanlash kerak?  </p>
+                <p><span>• Aniq va chiroyli gapirish </span></p>
+                <p>- Parazit so‘zlardan qanday qutulish mumkin?   </p>
+                <p>- Diksiya, ovoz va intonatsiyani qanday yaxshilash kerak?   </p>
+                <p>- Ishonchli nutq uchun samarali mashqlar   </p>
               </ul>
               <ul>
-                <p><span>• Profilni bezash</span></p>
-                <p>- Sotuvchi akkauntni qanday yaratish mumkin?  </p>
-                <p>- Biografiya, avatar, havolalar – nima muhim?  </p>
-                <p>- Profil sarlavhasi, mahkamlab qo‘yilgan storislar  </p>
+                <p><span>• Xarizmatik storislarni qanday yaratish mumkin?</span></p>
+                <p>- Odamlar sening gaplaringni diqqat bilan eshitishi uchun qanday gapirish kerak?   </p>
+                <p>- Ekran orqali hissiyotlarni qanday yetkazish mumkin?   </p>
+                <p>- Nega tabiiy bo‘lish juda muhim? </p>
               </ul>
-              <ul>
-                <p><span>• Trendli kontent yaratish </span></p>
-                <p>- Hozir SMM'da nima ommabop?  </p>
-                <p>- Trendlarni qayerdan topish mumkin?  </p>
-                <p>- Trendlarni o‘z mavzusingga moslashtirish  </p>
-              </ul>
-              <ul>
-                <p><span>• Stories: auditoriyani qanday jalb qilish mumkin? </span></p>
-                <p>- Storis turlari: interaktiv, sotuvchi, jalb qiluvchi  </p>
-                <p>- Storislarni suratga olish, montaj qilish va bezash  </p>
-                <p>- Har kuni storis uchun 10 ta g‘oya  </p>
-              </ul>
-              <ul>
-                <p><span>• Telegram kanalini yuritish </span></p>
-                <p>- Telegram'da targ‘ibot asoslari  </p>
-                <p>- Kontentni qayerdan olish va nimalarni e’lon ilish kerak?</p>
-                <p>- Qamrovni qanday oshirish mumkin?  </p>
-              </ul>
-              <ul>
-                <p><span>• Bir oyga kontent-reja tuzish  </span></p>
-                <p>- Postlar va storislar uchun g‘oyalarni qayerdan topish mumkin?  </p>
-                <p>- Charchab qolmaslik va ko‘p vaqt sarflamaslik  </p>
-                <p>- Turli sohalar uchun kontent-reja namunasi</p>
-              </ul>
+
             </div>
             <div className={`${styles.block} ${styles.bonus}`}>
               <div className={styles.title}>
-                <h2>1 Blok</h2>
+                <h2>Bonus darslar</h2>
               </div>
-              <h3>SMM asoslari</h3>
+              <h3>Sun'iy intellekt</h3>
               <ul>
-                <p><span>• SMM ga kirish</span></p>
-                <p>- SMM nima va u nima uchun kerak?  </p>
-                <p>- Ijtimoiy tarmoqlar va algoritmlar qanday ishlaydi?  </p>
-                <p>- SMM'da qanday imkoniyatlar bor?  </p>
+                <p><span>•  Sun’iy intellekt (SI) SMM’da</span></p>
+                <p>- Sun’iy intellekt yordamida kontent yaratish   </p>
+                <p>- SI yordamida g‘oyalar, matnlar va tasvirlarni eneratsiya qilish   </p>
+                <p>- Instagram va boshqa ijtimoiy tarmoqlarda ish jarayonini avtomatlashtirish   </p>
               </ul>
               <ul>
-                <p><span>• Kontent strategiyasi </span></p>
-                <p>- Shaxsiy brend va pozitsiyalash qanday yaratiladi?  </p>
-                <p>- Maqsadli auditoriyani aniqlash: sening odaming kim?  </p>
-                <p>- Blog/proekt mavzusini qanday tanlash kerak?  </p>
+                <p><span>• SI yordamida foto va videolarni qayta ishlash  </span></p>
+                <p>- Fotosurat sifatini yaxshilash uchun ilovalar va servislar   </p>
+                <p>- Reels va storis uchun SI-filtrlar va effektlar   </p>
+                <p>- Sun’iy intellekt yordamida tezkor montaj qilish    </p>
               </ul>
-              <ul>
-                <p><span>• Profilni bezash</span></p>
-                <p>- Sotuvchi akkauntni qanday yaratish mumkin?  </p>
-                <p>- Biografiya, avatar, havolalar – nima muhim?  </p>
-                <p>- Profil sarlavhasi, mahkamlab qo‘yilgan storislar  </p>
-              </ul>
-              <ul>
-                <p><span>• Trendli kontent yaratish </span></p>
-                <p>- Hozir SMM'da nima ommabop?  </p>
-                <p>- Trendlarni qayerdan topish mumkin?  </p>
-                <p>- Trendlarni o‘z mavzusingga moslashtirish  </p>
-              </ul>
-              <ul>
-                <p><span>• Stories: auditoriyani qanday jalb qilish mumkin? </span></p>
-                <p>- Storis turlari: interaktiv, sotuvchi, jalb qiluvchi  </p>
-                <p>- Storislarni suratga olish, montaj qilish va bezash  </p>
-                <p>- Har kuni storis uchun 10 ta g‘oya  </p>
-              </ul>
-              <ul>
-                <p><span>• Telegram kanalini yuritish </span></p>
-                <p>- Telegram'da targ‘ibot asoslari  </p>
-                <p>- Kontentni qayerdan olish va nimalarni e’lon ilish kerak?</p>
-                <p>- Qamrovni qanday oshirish mumkin?  </p>
-              </ul>
-              <ul>
-                <p><span>• Bir oyga kontent-reja tuzish  </span></p>
-                <p>- Postlar va storislar uchun g‘oyalarni qayerdan topish mumkin?  </p>
-                <p>- Charchab qolmaslik va ko‘p vaqt sarflamaslik  </p>
-                <p>- Turli sohalar uchun kontent-reja namunasi</p>
-              </ul>
+
+              <div className={styles.bonusFooter}>
+                <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M27.4336 0.50293H64.9524C72.2621 0.50293 78.9019 3.49312 83.7218 8.30297C88.5316 13.1228 91.5216 19.7626 91.5216 27.0724V64.5912C91.5216 71.9009 88.5316 78.5507 83.7218 83.3606C78.9019 88.1804 72.2621 91.1704 64.9524 91.1704H27.4336C20.1238 91.1704 13.474 88.1804 8.65416 83.3606C3.84432 78.5507 0.854492 71.9009 0.854492 64.5912V27.0724C0.854492 19.7626 3.84432 13.1228 8.65416 8.30297C13.474 3.49312 20.1238 0.50293 27.4336 0.50293ZM64.9524 7.40309H27.4336C22.0238 7.40309 17.1039 9.62281 13.544 13.1827C9.97413 16.7526 7.75429 21.6725 7.75429 27.0724V64.5912C7.75429 70.001 9.97413 74.9205 13.544 78.4803C17.1039 82.0502 22.0238 84.2604 27.4336 84.2604H64.9524C70.3522 84.2604 75.272 82.0502 78.8419 78.4803C82.4118 74.9205 84.6218 70.001 84.6218 64.5912V27.0724C84.6218 21.6725 82.4018 16.7526 78.8419 13.1827C75.272 9.62281 70.3522 7.40309 64.9524 7.40309Z" fill="#F00050" />
+                  <path fillRule="evenodd" clipRule="evenodd" d="M46.1929 65.5114C40.9231 61.3216 35.5632 57.0614 31.1734 51.9816C27.8035 48.0917 23.5537 41.9823 23.9737 36.5724C24.1837 33.7925 25.8036 30.7825 28.4635 29.6625C32.3434 28.0326 36.5133 29.5724 38.7532 33.0623C39.4532 34.1523 40.0232 35.4425 40.6432 36.5925L46.1729 46.9222L46.1929 46.8919L46.2029 46.9222L51.7328 36.5925C52.3527 35.4425 52.9227 34.1523 53.6227 33.0623C55.8626 29.5724 60.0324 28.0326 63.9123 29.6625C66.5722 30.7825 68.1921 33.7925 68.4021 36.5724C68.8221 41.9823 64.5723 48.0917 61.2124 51.9816C56.8126 57.0614 51.4527 61.3216 46.1929 65.5114ZM46.1629 33.6326C45.3929 32.1926 44.8029 30.8825 44.0329 29.6825C40.0631 23.5027 32.6033 21.1228 26.0335 23.8927C21.2337 25.9126 18.1239 30.9026 17.7239 36.0925C17.1639 43.4622 21.8537 50.7817 26.4335 56.0816C31.6834 62.1514 38.0932 67.0412 44.323 72.041C44.583 72.251 44.843 72.4511 45.093 72.6611C45.503 72.9911 45.8529 73.1213 46.1929 73.1113C46.5229 73.1213 46.8728 72.9911 47.2828 72.6611C47.5428 72.4511 47.7928 72.251 48.0528 72.041C54.2826 67.0412 60.6924 62.1514 65.9423 56.0816C70.5221 50.7817 75.2119 43.4622 74.6519 36.0925C74.2519 30.9026 71.1421 25.9126 66.3523 23.8927C59.7725 21.1228 52.3127 23.5027 48.3529 29.6825C47.5829 30.8825 46.9829 32.1926 46.2129 33.6326C46.2029 33.6226 46.1929 33.6023 46.1929 33.5823C46.1829 33.6023 46.1729 33.6226 46.1629 33.6326Z" fill="#F00050" />
+                </svg>
+
+                <h4>Amaliy mashg‘ulotlar va
+                  <br />
+                  SI  foydalanish imkoniyati.</h4>
+              </div>
             </div>
           </div>
-        </div>
+        </div>: 
+        <div className={`row ${styles.row} ${styles.rowMobile}`}>
+          <div className={`${styles.block} ${styles.one}`}>
+            <div className={styles.title}>
+              <h2>1 Blok</h2>
+            </div>
+            <h3>SMM asoslari</h3>
+            <ul>
+              <p><span>• SMM ga kirish</span></p>
+              <p>- SMM nima va u nima uchun kerak?  </p>
+              <p>- Ijtimoiy tarmoqlar va algoritmlar qanday ishlaydi?  </p>
+              <p>- SMM'da qanday imkoniyatlar bor?  </p>
+            </ul>
+            <ul>
+              <p><span>• Kontent strategiyasi </span></p>
+              <p>- Shaxsiy brend va pozitsiyalash qanday yaratiladi?  </p>
+              <p>- Maqsadli auditoriyani aniqlash: sening odaming kim?  </p>
+              <p>- Blog/proekt mavzusini qanday tanlash kerak?  </p>
+            </ul>
+            <ul>
+              <p><span>• Profilni bezash</span></p>
+              <p>- Sotuvchi akkauntni qanday yaratish mumkin?  </p>
+              <p>- Biografiya, avatar, havolalar – nima muhim?  </p>
+              <p>- Profil sarlavhasi, mahkamlab qo‘yilgan storislar  </p>
+            </ul>
+            <ul>
+              <p><span>• Trendli kontent yaratish </span></p>
+              <p>- Hozir SMM'da nima ommabop?  </p>
+              <p>- Trendlarni qayerdan topish mumkin?  </p>
+              <p>- Trendlarni o‘z mavzusingga moslashtirish  </p>
+            </ul>
+            <ul>
+              <p><span>• Stories: auditoriyani qanday jalb qilish mumkin? </span></p>
+              <p>- Storis turlari: interaktiv, sotuvchi, jalb qiluvchi  </p>
+              <p>- Storislarni suratga olish, montaj qilish va bezash  </p>
+              <p>- Har kuni storis uchun 10 ta g‘oya  </p>
+            </ul>
+            <ul>
+              <p><span>• Telegram kanalini yuritish </span></p>
+              <p>- Telegram'da targ‘ibot asoslari  </p>
+              <p>- Kontentni qayerdan olish va nimalarni e’lon ilish kerak?</p>
+              <p>- Qamrovni qanday oshirish mumkin?  </p>
+            </ul>
+            <ul>
+              <p><span>• Bir oyga kontent-reja tuzish  </span></p>
+              <p>- Postlar va storislar uchun g‘oyalarni qayerdan topish mumkin?  </p>
+              <p>- Charchab qolmaslik va ko‘p vaqt sarflamaslik  </p>
+              <p>- Turli sohalar uchun kontent-reja namunasi</p>
+            </ul>
+          </div>
+          <div className={`${styles.block} ${styles.two}`}>
+            <div className={styles.title}>
+              <h2>2 Blok</h2>
+            </div>
+            <h3>Shaxsiy brend</h3>
+            <ul>
+              <p><span>• Birinchi 1000 obunachini qanday yig‘ish mumkin?  </span></p>
+              <p>- Bepul va xavfsiz targ‘ibot usullari  </p>
+              <p>- Hamkorlik va o‘zaro piarni qanday tashkil qilish kerak?  </p>
+              <p>- Obunachilarni kontentingni bo‘lishishga qanday ndash mumkin?  </p>
+            </ul>
+            <ul>
+              <p><span>• Blogerlar bilan ishlash   </span></p>
+              <p>- Hamkorlik uchun blogerlarni qanday topish kerak?   </p>
+              <p>- Reklama bo‘yicha to‘g‘ri kelishish yo‘llari   </p>
+              <p>- Yangi boshlovchilar qanday xatolarga yo‘l qo‘yadi?   </p>
+            </ul>
+            <ul>
+              <p><span>• Jonli efirlar va auditoriyani jalb qilish  </span></p>
+              <p>- Jonli efirlarni qanday to‘g‘ri o‘tkazish kerak?   </p>
+              <p>- Muvaffaqiyatli mavzular   </p>
+              <p>- Efirga qanday tayyorlanish va qo‘rqmaslik?   </p>
+            </ul>
+            <ul>
+              <p><span>• SMM'ni qanday monetizatsiya qilish mumkin?  </span></p>
+              <p>- Daromad olishning 5 real usuli   </p>
+              <p>- Kichik blog bilan ham pul ishlashni qanday boshlash mumkin?  </p>
+              <p>- Daromad olishga halal beradigan xatolar   </p>
+            </ul>
+            <ul>
+              <p><span>• Avtovoronka va progrev orqali sotish   </span></p>
+              <p>- Voronka nima va u qanday ishlaydi?   </p>
+              <p>- Auditoriyani xarid qilishga qanday tayyorlash kerak?   </p>
+              <p>- Storis orqali sotuvni qanday to‘g‘ri yo‘lga qo‘yish mumkin? </p>
+            </ul>
+
+          </div>
+          <div className={`${styles.block} ${styles.three}`}>
+            <div className={styles.title}>
+              <h2>3 Blok</h2>
+            </div>
+            <h3>Mobilografiya</h3>
+            <ul>
+              <p><span>• Mobil fotosuratga olish (mobilografiya) </span></p>
+              <p> Telefonda ajoyib suratlarni qanday tushirish mumkin?    </p>
+              <p> Yorug‘lik, rakurslar, kompozitsiya    </p>
+              <p> Yangi boshlovchilar qiladigan asosiy xatolar    </p>
+            </ul>
+            <ul>
+              <p><span>• Telefon orqali suratlarni tahrirlash va montaj qilish  </span></p>
+              <p> Eng yaxshi bepul tahrirlash ilovalari    </p>
+              <p> Instagram uchun uslubiy vizual yaratish    </p>
+              <p> Rang tuzatish, filtrlar, presetlar   </p>
+            </ul>
+            <ul>
+              <p><span>• Reels turlari va ularni yaratish  </span></p>
+              <p> Qaysi Reels eng ko‘p ko‘rish to‘playdi?    </p>
+              <p> Trendlar tahlili: hozirgi eng ommabop formatlar   </p>
+              <p> Ssenariy, suratga olish, montaj   </p>
+            </ul>
+            <ul>
+              <p><span>• Video-kontent (asoslar)   </span></p>
+              <p> Nega video ijtimoiy tarmoqlarda asosiy vositadir?    </p>
+              <p> Qanday qilib zo‘r Reels va TikTok videolarini suratga olish mumkin?    </p>
+              <p> Suratga olishda eng ko‘p uchraydigan xatolar    </p>
+            </ul>
+            <ul>
+              <p><span>• Telefonda video montaj qilish   </span></p>
+              <p> Eng yaxshi bepul montaj ilovalari  </p>
+              <p> Videolarni qanday kesish, matn va effektlar qo‘shish    </p>
+              <p> Musiqa va trendli tovushlar  </p>
+            </ul>
+          </div>
+          <div className={`${styles.block} ${styles.four}`}>
+            <div className={styles.title}>
+              <h2>4 Blok</h2>
+            </div>
+            <h3>Kopirayting</h3>
+            <ul>
+              <p><span>• Qanday qilib auditoriyani jalb qiluvchi matnlar yozish mumkin?  </span></p>
+              <p>- Zo‘r postlar yozish uchun formulalar   </p>
+              <p>- Qanday yozish kerakki, odamlar oxirigacha o‘qisin?  </p>
+              <p>- Matn orqali sotishni qanday amalga oshirish mumkin?  </p>
+            </ul>
+            <ul>
+              <p><span>• Sotuvchi postlar va storislar yozish   </span></p>
+              <p>- Mukammal sotuvchi post formulasi   </p>
+              <p>- Agresiyasiz storis orqali qanday sotish mumkin?  </p>
+              <p>- Xatolar, tufayli hech kim sotib olmaydi   </p>
+            </ul>
+            <ul>
+              <p><span>• Salbiy fikrlar va heyt bilan qanday ishlash kerak?  </span></p>
+              <p>- Tanqidlarga to‘g‘ri javob berish usullari   </p>
+              <p>- Qachon izohlarni o‘chirish va qachon javob berish kerak?   </p>
+              <p>- Heytdan qanday qo‘rqmaslik mumkin?  </p>
+            </ul>
+          </div>
+          <div className={`${styles.block} ${styles.five}`}>
+            <div className={styles.title}>
+              <h2>5 Blok</h2>
+            </div>
+            <h3>Target va reklama</h3>
+            <ul>
+              <p><span>• Reklama uchun kreativlarni qanday yaratish kerak? </span></p>
+              <p> Reklama uchun banner yoki video qanday
+                ayyorlanadi?   </p>
+              <p> G‘oyalar va ilhomni qayerdan topish mumkin?   </p>
+              <p>- Telefonda kreativ yaratish uchun eng yaxshi vositalar    </p>
+            </ul>
+            <ul>
+              <p><span>• Targetlangan reklamani qanday ishga tushirish kerak?   </span></p>
+              <p> Instagram'da target reklamaning asoslari   </p>
+              <p> Telefonda reklamani to‘g‘ri sozlash   </p>
+              <p> Target byudjetni yo‘q qilishga olib keladigan xatolar </p>
+            </ul>
+            <ul>
+              <p><span>• Profilni bezash</span></p>
+              <p>- Sotuvchi akkauntni qanday yaratish mumkin?  </p>
+              <p>- Biografiya, avatar, havolalar – nima muhim?  </p>
+              <p>- Profil sarlavhasi, mahkamlab qo‘yilgan storislar  </p>
+            </ul>
+
+          </div>
+          <div className={`${styles.block} ${styles.six}`}>
+            <div className={styles.title}>
+              <h2>6 Blok</h2>
+            </div>
+            <h3>Aysanemxondan <br /> expertli darslar</h3>
+            <ul>
+              <p><span>• Kamerada ishonch bilan ishlash </span></p>
+              <p>- Kameradan qo‘rqishni qanday yengish kerak?    </p>
+              <p>- Qo‘llar va hissiyotlarni qanday boshqarish kerak?  </p>
+              <p>- Ob’ektivga qanday qarash kerak, shunda tomoshabinlarni o‘ziga jalb qilish mumkin?   </p>
+            </ul>
+            <ul>
+              <p><span>• Aniq va chiroyli gapirish </span></p>
+              <p>- Parazit so‘zlardan qanday qutulish mumkin?   </p>
+              <p>- Diksiya, ovoz va intonatsiyani qanday yaxshilash kerak?   </p>
+              <p>- Ishonchli nutq uchun samarali mashqlar   </p>
+            </ul>
+            <ul>
+              <p><span>• Xarizmatik storislarni qanday yaratish mumkin?</span></p>
+              <p>- Odamlar sening gaplaringni diqqat bilan eshitishi uchun qanday gapirish kerak?   </p>
+              <p>- Ekran orqali hissiyotlarni qanday yetkazish mumkin?   </p>
+              <p>- Nega tabiiy bo‘lish juda muhim? </p>
+            </ul>
+
+          </div>
+          <div className={`${styles.block} ${styles.seven}`}>
+            <div className={styles.title}>
+              <h2>7 Blok</h2>
+            </div>
+            <h3>Mijozlar va daromad</h3>
+            <ul>
+              <p><span>• Muvaffaqiyatli SMM-mutaxassisining chek-listi </span></p>
+              <p>- SMM-menejerga qanday ko‘nikmalar kerak?    </p>
+              <p>- Ishni qanday tizimlashtirish va charchashdan qochish?   </p>
+              <p>- Qanday xatolarga yo‘l qo‘ymaslik kerak?   </p>
+            </ul>
+            <ul>
+              <p><span>• SMM'da mijozlarni qanday topish mumkin?  </span></p>
+              <p>- Birinchi mijozlarni qayerdan izlash kerak?   </p>
+              <p>- Xizmatlaringni to‘g‘ri taklif qilish usullari   </p>
+              <p>- Tajriba bo‘lmasa ham kuchli portfolio
+                yaratish </p>
+            </ul>
+            <ul>
+              <p><span>• Mijozlar bilan ishlash va motivatsiyani yo‘qotmaslik</span></p>
+              <p>- Mijozlar bilan qanday to‘g‘ri ishlash kerak?   </p>
+              <p>- Zaharli buyurtmachilarni qanday tanib olish va oldini olish?   </p>
+              <p>- Hammasiga ulgurish uchun kunni qanday tashkil qilish kerak?  </p>
+            </ul>
+            <ul>
+              <p><span>•  Xizmat narxini qanday oshirish mumkin? </span></p>
+              <p>- O‘z qadriyatini qanday aniqlash kerak?  </p>
+              <p>- Mijozga nega qimmatligini qanday tushuntirish mumkin?  </p>
+              <p>- Arzon mutaxassislar qanday xatolarga yo‘l qo‘yadi?    </p>
+            </ul>
+            <ul>
+              <p><span>• Yakuniy dars: SMM'dagi shaxsiy strategiyang  </span></p>
+              <p>- O‘rgangan barcha bilimlarni qanday qo‘llash kerak?   </p>
+              <p>- Birinchi qadamlar qanday bo‘lishi kerak?    </p>
+              <p>- Motivatsiyani yo‘qotmaslik va natijaga erishish yo‘llari   </p>
+            </ul>
+          </div>
+          <div className={`${styles.block} ${styles.bonus}`}>
+            <div className={styles.title}>
+              <h2>Bonus darslar</h2>
+            </div>
+            <h3>Sun'iy intellekt</h3>
+            <ul>
+              <p><span>•  Sun’iy intellekt (SI) SMM’da</span></p>
+              <p>- Sun’iy intellekt yordamida kontent yaratish   </p>
+              <p>- SI yordamida g‘oyalar, matnlar va tasvirlarni eneratsiya qilish   </p>
+              <p>- Instagram va boshqa ijtimoiy tarmoqlarda ish jarayonini avtomatlashtirish   </p>
+            </ul>
+            <ul>
+              <p><span>• SI yordamida foto va videolarni qayta ishlash  </span></p>
+              <p>- Fotosurat sifatini yaxshilash uchun ilovalar va servislar   </p>
+              <p>- Reels va storis uchun SI-filtrlar va effektlar   </p>
+              <p>- Sun’iy intellekt yordamida tezkor montaj qilish    </p>
+            </ul>
+
+            <div className={styles.bonusFooter}>
+              <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.4336 0.50293H64.9524C72.2621 0.50293 78.9019 3.49312 83.7218 8.30297C88.5316 13.1228 91.5216 19.7626 91.5216 27.0724V64.5912C91.5216 71.9009 88.5316 78.5507 83.7218 83.3606C78.9019 88.1804 72.2621 91.1704 64.9524 91.1704H27.4336C20.1238 91.1704 13.474 88.1804 8.65416 83.3606C3.84432 78.5507 0.854492 71.9009 0.854492 64.5912V27.0724C0.854492 19.7626 3.84432 13.1228 8.65416 8.30297C13.474 3.49312 20.1238 0.50293 27.4336 0.50293ZM64.9524 7.40309H27.4336C22.0238 7.40309 17.1039 9.62281 13.544 13.1827C9.97413 16.7526 7.75429 21.6725 7.75429 27.0724V64.5912C7.75429 70.001 9.97413 74.9205 13.544 78.4803C17.1039 82.0502 22.0238 84.2604 27.4336 84.2604H64.9524C70.3522 84.2604 75.272 82.0502 78.8419 78.4803C82.4118 74.9205 84.6218 70.001 84.6218 64.5912V27.0724C84.6218 21.6725 82.4018 16.7526 78.8419 13.1827C75.272 9.62281 70.3522 7.40309 64.9524 7.40309Z" fill="#F00050" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M46.1929 65.5114C40.9231 61.3216 35.5632 57.0614 31.1734 51.9816C27.8035 48.0917 23.5537 41.9823 23.9737 36.5724C24.1837 33.7925 25.8036 30.7825 28.4635 29.6625C32.3434 28.0326 36.5133 29.5724 38.7532 33.0623C39.4532 34.1523 40.0232 35.4425 40.6432 36.5925L46.1729 46.9222L46.1929 46.8919L46.2029 46.9222L51.7328 36.5925C52.3527 35.4425 52.9227 34.1523 53.6227 33.0623C55.8626 29.5724 60.0324 28.0326 63.9123 29.6625C66.5722 30.7825 68.1921 33.7925 68.4021 36.5724C68.8221 41.9823 64.5723 48.0917 61.2124 51.9816C56.8126 57.0614 51.4527 61.3216 46.1929 65.5114ZM46.1629 33.6326C45.3929 32.1926 44.8029 30.8825 44.0329 29.6825C40.0631 23.5027 32.6033 21.1228 26.0335 23.8927C21.2337 25.9126 18.1239 30.9026 17.7239 36.0925C17.1639 43.4622 21.8537 50.7817 26.4335 56.0816C31.6834 62.1514 38.0932 67.0412 44.323 72.041C44.583 72.251 44.843 72.4511 45.093 72.6611C45.503 72.9911 45.8529 73.1213 46.1929 73.1113C46.5229 73.1213 46.8728 72.9911 47.2828 72.6611C47.5428 72.4511 47.7928 72.251 48.0528 72.041C54.2826 67.0412 60.6924 62.1514 65.9423 56.0816C70.5221 50.7817 75.2119 43.4622 74.6519 36.0925C74.2519 30.9026 71.1421 25.9126 66.3523 23.8927C59.7725 21.1228 52.3127 23.5027 48.3529 29.6825C47.5829 30.8825 46.9829 32.1926 46.2129 33.6326C46.2029 33.6226 46.1929 33.6023 46.1929 33.5823C46.1829 33.6023 46.1729 33.6226 46.1629 33.6326Z" fill="#F00050" />
+              </svg>
+
+              <h4>Amaliy mashg‘ulotlar va
+                <br />
+                SI  foydalanish imkoniyati.</h4>
+            </div>
+          </div>
+        </div>}
       </div>
     </div>
   );

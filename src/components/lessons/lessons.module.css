@@ -127,11 +127,42 @@
 .lessons .row .block ul p {
   font-family: Evolventa;
   color: var(--white);
-  font-size: 26px;
+  font-size: 25px;
 }
 .lessons .row .block ul p span {
   font-weight: 700;
-  font-size: 26px;
+  font-size: 25px;
+}
+
+.lessons .row .block.bonus .title {
+  width: 350px;
+}
+
+.lessons .row .block .bonusFooter {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  width: fit-content;
+  border-radius: 20px;
+  background-color: var(--white);
+  margin: auto;
+  margin-top: 40px;
+}
+.lessons .row .block .bonusFooter svg {
+  width: 25%;
+  height: auto;
+}
+.lessons .row .block .bonusFooter h4 {
+  font-family: Gilroy;
+  font-weight: 400;
+  color: var(--red);
+  font-size: 30px;
+  width: 100%;
+}
+
+.lessons .rowMobile {
+  display: none;
 }
 @media (max-width: 1350px) {
   .titles p {
@@ -142,6 +173,58 @@
   .titles p span,
   .titles p {
     font-size: 28px;
+  }
+  .lessons .row .block h3 {
+    font-size: 44px;
+  }
+  .lessons .row .block ul p,
+  .lessons .row .block ul p span {
+    font-size: 20px;
+  }
+  .lessons .row .block .bonusFooter h4 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .lessons .row .block h3 {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+  .lessons .row .block ul p,
+  .lessons .row .block ul p span {
+    font-size: 15px;
+  }
+  .lessons .row {
+    gap: 20px;
+  }
+
+  .lessons .row .block .bonusFooter {
+    gap: 20px;
+    padding: 15px 25px;
+    margin-top: 30px;
+  }
+  .lessons .row .block .bonusFooter h4 {
+    font-size: 20px;
+  }
+
+  .lessons .row .block ul {
+    margin-top: 20px;
+  }
+
+  .lessons .row .block {
+    padding: 25px 30px;
+  }
+  .lessons .row .block .title h2 {
+    font-size: 20px;
+  }
+
+  .lessons .row .block .title {
+    width: 150px;
+    height: 50px;
+  }
+  .lessons .row .block.bonus .title {
+    width: 200px;
   }
 }
 
@@ -156,6 +239,21 @@
   .titles p span,
   .titles p {
     font-size: 18px;
+  }
+  .lessons .row {
+    flex-direction: column;
+  }
+  .lessons .row .left,
+  .lessons .row .right {
+    width: 100%;
+  }
+  .lessons .rowPC{
+    display: none !important;
+  }
+  .lessons .rowMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 }
 
@@ -181,11 +279,54 @@
   .titles p {
     font-size: 15px;
   }
+  .lessons .row .block .bonusFooter {
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+  .lessons .row .block .bonusFooter svg {
+    width: 23%;
+  }
+  .lessons .row .block .bonusFooter h4 {
+    font-size: 16px;
+  }
+
+  .lessons .row .block ul p,
+  .lessons .row .block ul p span {
+    font-size: 13px;
+  }
+  .lessons .row .block h3 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  .lessons .row .block ul {
+    margin-top: 15px;
+  }
+  .lessons {
+    border-radius: 20px;
+    margin: 30px 0;
+    padding: 30px 0;
+  }
 }
 
 @media (max-width: 360px) {
   .titles p span,
   .titles p {
     font-size: 12px;
+  }
+  .lessons .row .block .bonusFooter {
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+  .lessons .row .block .bonusFooter svg {
+    width: 20%;
+  }
+  .lessons .row .block .bonusFooter h4 {
+    font-size: 14px;
+  }
+  .lessons .row .block h3 {
+    font-size: 25px;
+    margin-top: 20px;
   }
 }
