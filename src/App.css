@@ -93,6 +93,31 @@ input[type="number"] {
   z-index: 5;
 }
 
+.react-tel-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.react-tel-input .form-control {
+  width: 100% !important;
+  text-align: left !important;
+  height: 50px !important;
+  border-radius: 30px !important;
+  padding-left: 70px !important;
+  font-size: 18px !important;
+  font-family: Evolventa !important;
+}
+.react-tel-input .flag-dropdown {
+  background-color: #fff !important;
+  width: 60px !important;
+  border-radius: 30px 0 0 30px !important;
+}
+.react-tel-input .selected-flag {
+  border-radius: 30px 0 0 30px !important;
+}
+.react-tel-input .country-list {
+  text-align: left !important;
+}
 @media (max-width: 500px) {
   .container {
     width: 92%;
