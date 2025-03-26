@@ -58,16 +58,18 @@
 
 .titleWork {
   height: auto;
-  margin-top: 50px;
   width: 60%;
+  margin-bottom: 30px;
 }
 .works {
   background: #e6e6e6;
   border-radius: 30px;
-  padding: 40px 0;
-  margin-top: 20px;
+  padding: 50px 0;
+  margin-top: 50px;
   position: relative;
   overflow: hidden;
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
 }
 
 .works .worksHeader,
@@ -178,7 +180,8 @@
     gap: 30px;
   }
 
-  .works { 
+  .works {
+    padding-top: 30px;
     margin-top: 10px;
   }
 }

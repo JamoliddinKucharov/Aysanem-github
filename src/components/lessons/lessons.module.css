@@ -31,8 +31,7 @@
 }
 .lessons {
   background: #e6e6e6;
-  border-radius: 30px;
-  margin: 50px 0;
+  margin-bottom: 50px;
   padding: 50px 0;
 }
 .lessons .row .left,
@@ -261,7 +260,7 @@
   .titles {
     flex-direction: column;
     align-items: start;
-    margin-top: 20px;
+    margin-top: 0;
   }
 
   .titles p {
@@ -304,8 +303,9 @@
   }
   .lessons {
     border-radius: 20px;
-    margin: 30px 0;
     padding: 30px 0;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
   }
 }
 
