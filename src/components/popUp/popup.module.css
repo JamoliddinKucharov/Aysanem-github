@@ -11,7 +11,7 @@
   border-radius: 30px;
   padding-bottom: 50px;
 }
-.popUp .title img {
+.popUp .title svg {
   width: 250px;
 }
 
@@ -106,7 +106,7 @@
   .popUp .title {
     text-align: center;
   }
-  .popUp .title img {
+  .popUp .title svg {
     width: 180px;
   }
 }

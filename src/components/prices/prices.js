@@ -5,7 +5,7 @@ import { GlobalContext } from "../../context/globalState";
 
 const Prices = React.memo(() => {
 
-    const { popupHandler,
+    const { 
         setPopuphandler } = useContext(GlobalContext);
 
     return (

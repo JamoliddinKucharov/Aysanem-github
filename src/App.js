@@ -48,7 +48,10 @@ function App() {
     getAll();
   }, []);
 
-
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/public/assets/images/popup-background.png';
+  }, []);
 
 
   return (
@@ -67,10 +70,20 @@ function App() {
 
         <Footer />
 
-        {popupHandler && <>
-          <div className={"backgroundPopUp"} onClick={() => setPopuphandler(false)}></div>
-          <PopUp />
-        </>}</ > : <div className="Loading-page">
+        <Suspense fallback={<div className="backgroundPopUp loading">
+          <Loading />
+        </div>}>
+          {popupHandler && (
+            <>
+              <div
+                className={"backgroundPopUp"}
+                onClick={() => setPopuphandler(false)}
+              ></div>
+              <PopUp />
+            </>
+          )}
+        </Suspense>;
+      </ > : <div className="Loading-page">
         <Loading />
       </div>}
     </div>
