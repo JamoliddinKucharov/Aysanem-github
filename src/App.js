@@ -50,9 +50,10 @@ function App() {
 
 
 
+
   return (
     <div className="project-main">
-      <Suspense
+      {isAppLoaded ? <><Suspense
         fallback={
           <div className="Loading-page">
             <Loading />
@@ -64,12 +65,14 @@ function App() {
         </Routes>
       </Suspense>
 
-      <Footer />
+        <Footer />
 
-      {popupHandler && <>
-        <div className={"backgroundPopUp"} onClick={() => setPopuphandler(false)}></div>
-        <PopUp />
-      </>}
+        {popupHandler && <>
+          <div className={"backgroundPopUp"} onClick={() => setPopuphandler(false)}></div>
+          <PopUp />
+        </>}</ > : <div className="Loading-page">
+        <Loading />
+      </div>}
     </div>
   );
 }
