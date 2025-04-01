@@ -1,31 +1,32 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import styles from "./videoBlock.module.css";
+import YouTube from "react-youtube";
 
 const VideoBlock = React.memo(() => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
 
-  const handlePlayPause = () => {
-    if (videoRef.current) {
-      if (!isPlaying) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-      setIsPlaying(!isPlaying);
-    }
+
+
+  const opts = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      autoplay: 1,
+      controls: 0, // 🎯 Foydalanuvchi videoni oldinga o‘tkaza olmasligi uchun
+      disablekb: 1, // Klaviatura orqali boshqarishni o‘chiradi
+      modestbranding: 1,
+      rel: 0, // O‘xshash videolar ko‘rinmasligi uchun
+    },
   };
 
-
-  const handlePlay = () => {
-    setIsPlaying(true);
+  const onEnd = () => {
+    setVideoEnded(true);
   };
-
   return (
     <div className={styles.videoBlock}>
       <div className="container">
         <h1 className={styles.title}>Hayotingizni yaxshilash vaqti keldi!</h1>
-        <div className={styles.video} onClick={handlePlayPause}>
+        <div className={styles.video}  >
           {/* {isPlaying ? (
             <iframe
               className={styles.videoPlayer}
@@ -75,7 +76,7 @@ const VideoBlock = React.memo(() => {
             </div> 
           )} */}
 
-          {isPlaying ? (
+          {/* {isPlaying ? (
             <iframe
               className={styles.videoPlayer}
               width="100%"
@@ -89,7 +90,7 @@ const VideoBlock = React.memo(() => {
           ) : (
             <>
               <img src="/assets/images/poster.png" className={styles.poster} alt="Video poster" />
-              <div className={styles.play} onClick={handlePlay}>
+              <div className={styles.play} >
                 <svg
                   width="50"
                   height="57"
@@ -106,6 +107,12 @@ const VideoBlock = React.memo(() => {
                 </svg>
               </div>
             </>
+          )} */}
+
+          {videoEnded ? (
+            <p>Video tugadi!</p> // 🎯 Video tugaganda boshqa tarkib ko‘rsatish mumkin
+          ) : (
+            <YouTube videoId="9QIUDujg6Ow" opts={opts} onEnd={onEnd} />
           )}
         </div>
         <p>
