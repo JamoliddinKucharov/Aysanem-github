@@ -10,10 +10,14 @@ const VideoBlock = React.memo(() => {
     width: "100%",
     playerVars: {
       autoplay: 1,
-      controls: 0,
-      disablekb: 1,
+      controls: 0, // Foydalanuvchi boshqaruv elementlarini ko‘rmasligi uchun
+      disablekb: 1, // Klaviatura orqali boshqarish bloklanadi
       modestbranding: 1,
       rel: 0,
+      fs: 0, // Fullscreen tugmachasini o‘chiradi
+      iv_load_policy: 3, // Reklama bannerlarini olib tashlashga harakat qiladi
+      preventInteraction: 1, // **📌 Interaktiv harakatlarni bloklaydi (iOS-da)**
+      gesture: "none", // **📌 Mobil qurilmalarda ikki marta bosish orqali oldinga o'tishni bloklaydi**
     },
   };
 
