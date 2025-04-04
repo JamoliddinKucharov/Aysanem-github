@@ -11,6 +11,8 @@ const Calculator = lazy(() => import("../../components/calculator/calculator"));
 const ToStart = lazy(() => import("../../components/toStart/toStart"));
 const GoLesson = lazy(() => import("../../components/GoLesson/goLesson"));
 const Prices = lazy(() => import("../../components/prices/prices"));
+const ForWhom = lazy(() => import("../../components/forWhom/forWhom"));
+const Bonus = lazy(() => import("../../components/bonus/bonus"));
 
 const Home = React.memo(({ setVideoHandler }) => {
   return (
@@ -18,6 +20,7 @@ const Home = React.memo(({ setVideoHandler }) => {
       <Header />
       <Main />
       <VideoBlock setVideoHandler={setVideoHandler} />
+      <ForWhom />
       <Gifts />
       <Teachers />
       <Lessons />
@@ -25,7 +28,7 @@ const Home = React.memo(({ setVideoHandler }) => {
       <GoLesson />
       <Prices />
       <ToStart />
-
+      <Bonus />
     </div>
   );
 });

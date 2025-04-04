@@ -68,12 +68,12 @@ const VideoBlock = React.memo(() => {
             </div>
           ) : (
             <div className={styles.videoWrapper}>
-              <YouTube videoId="9QIUDujg6Ow" opts={opts} style={{ height: "100%" }} onReady={onReady} />
+              <YouTube videoId="HzUGOhKmGsE" opts={opts} style={{ height: "100%" }} onReady={onReady} />
               <div className={styles.overlay} onClick={handleOverlayClick}></div>
             </div>
           )}
           {videoStartedButton &&
-            <div className={styles.play} >
+            <div className={styles.play} onClick={handleOverlayClick} >
               <svg
                 width="50"
                 height="57"
