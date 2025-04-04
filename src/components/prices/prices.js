@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import styles from "./prices.module.css";
 import { Link } from "react-router-dom";
-import { GlobalContext } from "../../context/globalState";
+import { GlobalContext } from "../../context/globalState"; 
 
 const Prices = React.memo(() => {
 
-    const { 
+    const {
         setPopuphandler } = useContext(GlobalContext);
 
     return (
-        <div className={styles.prices}>
+        <div className={styles.prices} id="course-price"  >
             <div className={styles.title}>
                 <div className="container">
                     <h1>Kursning narxi</h1>
