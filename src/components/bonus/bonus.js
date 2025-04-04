@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./bonus.module.css";
-import { Link } from "react-router-dom";
 
 const Bonus = React.memo(() => {
     return (

@@ -148,15 +148,21 @@
   .mobile {
     display: block;
     text-align: center;
+
+    background: rgb(152, 121, 207);
+    background: radial-gradient(
+      circle,
+      rgba(152, 121, 207, 1) 5%,
+      rgba(0, 0, 0, 1) 53%
+    );
   }
+
   .mobile img {
     width: auto;
     height: 400px;
     margin: auto;
-    margin-top: -50px;
-    z-index: -1;
     position: relative;
-    margin-bottom: -100px;
+    margin-bottom: -50px;
   }
   .bonus .left h4 {
     text-align: center;
@@ -170,7 +176,16 @@
 @media (max-width: 550px) {
   .bonus .left h4,
   .bonus .left h4 span {
-    font-size: 33px;
+    font-size: 25px;
+  }
+
+  .mobile {
+    background: rgb(152, 121, 207);
+    background: radial-gradient(
+      circle,
+      rgba(152, 121, 207, 1) 5%,
+      rgba(0, 0, 0, 1) 80%
+    );
   }
 
   .bonus .left {
@@ -180,6 +195,7 @@
   .bonus .left .bottom {
     gap: 20px;
     margin-top: 30px;
+    justify-content: center;
   }
   .bonus .left .bottom button {
     width: 50%;
@@ -190,7 +206,10 @@
   .bonus .left .bottom svg {
     width: 25%;
   }
-  .bonus{
+  .bonus {
     padding: 30px 15px;
   }
+}
+
+@media (max-width: 380px) {
 }
