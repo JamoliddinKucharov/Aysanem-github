@@ -82,7 +82,7 @@ function App() {
               <PopUp />
             </>
           )}
-        </Suspense>;
+        </Suspense>
       </ > : <div className="Loading-page">
         <Loading />
       </div>}

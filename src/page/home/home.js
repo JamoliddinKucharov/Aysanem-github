@@ -32,7 +32,7 @@ const Home = React.memo(({ setVideoHandler }) => {
       <Bonus />
       <Faq />
     </div>
-  );
+  )
 });
 
 export default Home;
