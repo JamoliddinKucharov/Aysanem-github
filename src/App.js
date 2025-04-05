@@ -14,10 +14,6 @@ function App() {
     setPopuphandler } = useContext(GlobalContext);
   const [isAppLoaded, setIsAppLoaded] = useState(false);
 
-
-
-
-
   const getAll = () => {
     const Inter = new FontFaceObserver("Evolventa");
 
@@ -50,7 +46,7 @@ function App() {
 
   useEffect(() => {
     const img = new Image();
-    img.src = '/public/assets/images/popup-background.png';
+    img.src = '/assets/images/popup-background.png';
   }, []);
 
 
