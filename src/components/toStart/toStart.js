@@ -12,13 +12,13 @@ const ToStart = React.memo(() => {
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date();
-      const nextAprilFifteenth = new Date(now.getFullYear(), 3, 10); // 3 - Aprel (0 dan boshlanadi)
+      const nextAprilTwentieth = new Date(now.getFullYear(), 3, 20);
 
-      if (now > nextAprilFifteenth) {
-        nextAprilFifteenth.setFullYear(nextAprilFifteenth.getFullYear() + 1);
+      if (now > nextAprilTwentieth) {
+        nextAprilTwentieth.setFullYear(nextAprilTwentieth.getFullYear() + 1);
       }
 
-      const difference = nextAprilFifteenth - now;
+      const difference = nextAprilTwentieth - now;
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
@@ -28,12 +28,12 @@ const ToStart = React.memo(() => {
       setTimeLeft({ days, hours, minutes, seconds });
     };
 
-
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
   }, []);
+
 
   const formatNumber = (number) => (number < 10 ? `0${number}` : number);
 

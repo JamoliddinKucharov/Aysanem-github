@@ -208,8 +208,6 @@
   }
   .bonus {
     padding: 30px 15px;
+    margin-bottom: 40px;
   }
-}
-
-@media (max-width: 380px) {
 }

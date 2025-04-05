@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./prices.module.css";
 import { Link } from "react-router-dom";
-import { GlobalContext } from "../../context/globalState"; 
+import { GlobalContext } from "../../context/globalState";
 
 const Prices = React.memo(() => {
 
@@ -45,7 +45,7 @@ const Prices = React.memo(() => {
                             <p>• Darslar 3 oy davomida saqlanib qolinadi</p>
                             <p>• Chat GPT  Pro  va Midjourney’ga oyga bepul kirish</p>
                             <p>• Vakansiyalar kanaliga kirish </p>
-                            <p>• 1 ta individual mashg‘ulot loyiha rodyuseri, marketing agentligigasi - Ruslan bilan</p>
+                            <p>• 1 ta individual mashg‘ulot loyiha prodyuseri, marketing agentligi egasi - Ruslan bilan</p>
                             <p>• Sovrinli o‘yinlarda ishtirok etish</p>
                             <p>• Agentlik jamoasiga saralash bosqichida qatnashish</p>
                             <p>• Sertifikat beriladi</p>
@@ -65,10 +65,10 @@ const Prices = React.memo(() => {
                             <p>• Savollar uchun umumiy guruhga kirish</p>
                             <p>• Kurator bilan 5 ta guruh mashg‘uloti</p>
                             <p>• Darslar 6 oy davomida saqlanib qolinadi</p>
-                            <p>• Kurs tugagandan so‘ng 1 oy qo‘shimcha kuratorlik</p>
+                            <p>• Kurs tugaganidan so‘ng 1 oy qo‘shimcha kuratorlik</p>
                             <p>• Chat GPT  Pro va Midjourney’ga bepul kirish </p>
                             <p>• Vakansiyalar kanaliga kirish</p>
-                            <p>• 2 ta individual mashg‘ulot loyiha rodyuseri, marketing agentligi gasi - Ruslan bilan</p>
+                            <p>• 2 ta individual mashg‘ulot loyiha prodyuseri, marketing agentligi egasi - Ruslan bilan</p>
                             <p>• Sovrinli o‘yinlarda ishtirok etish</p>
                             <p>• Aysanem Yusupova bilan guruhli onlayn suhbat</p>
                             <p>• Agentlik jamoasiga saralash bosqichida qatnashish</p>
