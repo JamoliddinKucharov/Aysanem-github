@@ -80,6 +80,10 @@
   cursor: pointer;
 }
 
+.posterMobile {
+  display: none;
+}
+
 @media (max-width: 1450px) {
   .videoBlock {
     padding-top: 40px;
@@ -151,6 +155,12 @@
   .videoBlock .video {
     height: 600px;
     border-radius: 20px;
+  }
+  .posterImage {
+    display: none;
+  }
+  .posterMobile {
+    display: block;
   }
 }
 @media (max-width: 550px) {

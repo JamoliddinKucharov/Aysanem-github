@@ -49,6 +49,7 @@ const VideoBlock = React.memo(() => {
           {!videoStarted ? (
             <div className={styles.poster} onClick={() => setVideoStarted(true)}>
               <img src="/assets/images/poster.png" alt="Poster" className={styles.posterImage} />
+              <img src="/assets/images/poster-mobile.jpg" alt="Poster" className={`${styles.posterImage} ${styles.posterMobile}`} />
               <div className={styles.play} >
                 <svg
                   width="50"
