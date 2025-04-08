@@ -7,7 +7,14 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.8.4",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "fontfaceobserver": "^2.3.0",
+    "google-auth-library": "^9.15.1",
+    "googleapis": "^148.0.0",
+    "node-fetch": "^3.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-input-mask": "^2.0.4",
@@ -24,6 +31,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://mainstreamuz.amocrm.ru",
   "eslintConfig": {
     "extends": [
       "react-app",
