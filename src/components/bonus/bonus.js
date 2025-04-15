@@ -20,7 +20,7 @@ const Bonus = React.memo(() => {
 
                         <p>Eng yaxshi narx faqat 24 soat davomida amal qiladi! </p>
 
-                        <p>Faqat hozir to‘lov qilsangiz, qo‘shimcha ravishda <span>200$</span> qiymatdagi <span>master-class ni</span> mutlaqo bepul qo‘lga kiritasiz!</p>
+                        <p>Faqat hozir to‘lov qilsangiz, qo‘shimcha ravishda <span>200$</span> qiymatidagi <span>master-class ni</span> mutlaqo bepul qo‘lga kiritasiz!</p>
 
                         <div className={styles.bottom}>
                             <button onClick={() => {

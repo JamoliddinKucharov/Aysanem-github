@@ -40,7 +40,7 @@ const Gifts = React.memo(() => {
 
           <p>
             <span> 30 dan ortiq professional darslar,</span>
-            insaydlar va ekspert fikrlari bilan.
+            insaydlar va ekspertlar fikrlari bilan.
           </p>
         </div>
         {isVisible ?  
@@ -73,7 +73,7 @@ const Gifts = React.memo(() => {
                 <p><span>• Trendli kontent yaratish </span></p>
                 <p>- Hozir SMM'da nima ommabop?  </p>
                 <p>- Trendlarni qayerdan topish mumkin?  </p>
-                <p>- Trendlarni o‘z mavzusingga moslashtirish  </p>
+                <p>- Trendlarni o‘z mavzusiga moslashtirish  </p>
               </ul>
               <ul>
                 <p><span>• Stories: auditoriyani qanday jalb qilish mumkin? </span></p>
@@ -83,15 +83,15 @@ const Gifts = React.memo(() => {
               </ul>
               <ul>
                 <p><span>• Telegram kanalini yuritish </span></p>
-                <p>- Telegram'da targ‘ibot asoslari  </p>
-                <p>- Kontentni qayerdan olish va nimalarni e’lon ilish kerak?</p>
+                <p>- Telegramda targ‘ibot asoslari  </p>
+                <p>- Kontentni qayerdan olish va nimalarni e’lon qilish kerak?</p>
                 <p>- Qamrovni qanday oshirish mumkin?  </p>
               </ul>
               <ul>
                 <p><span>• Bir oyga kontent-reja tuzish  </span></p>
                 <p>- Postlar va storislar uchun g‘oyalarni qayerdan topish mumkin?  </p>
                 <p>- Charchab qolmaslik va ko‘p vaqt sarflamaslik  </p>
-                <p>- Turli sohalar uchun kontent-reja namunasi</p>
+                <p>- Turli hil sohalar uchun kontent-reja namunasi</p>
               </ul>
             </div>
             <div className={`${styles.block} ${styles.four}`}>
@@ -126,7 +126,7 @@ const Gifts = React.memo(() => {
               <ul>
                 <p><span>• Reklama uchun kreativlarni qanday yaratish kerak? </span></p>
                 <p> Reklama uchun banner yoki video qanday
-                  ayyorlanadi?   </p>
+                  tayyorlanadi?   </p>
                 <p> G‘oyalar va ilhomni qayerdan topish mumkin?   </p>
                 <p>- Telefonda kreativ yaratish uchun eng yaxshi vositalar    </p>
               </ul>
@@ -134,7 +134,7 @@ const Gifts = React.memo(() => {
                 <p><span>• Targetlangan reklamani qanday ishga tushirish kerak?   </span></p>
                 <p> Instagram'da target reklamaning asoslari   </p>
                 <p> Telefonda reklamani to‘g‘ri sozlash   </p>
-                <p> Target byudjetni yo‘q qilishga olib keladigan xatolar </p>
+                <p> Target byudjetini yo‘q qilishga olib keladigan xatolar </p>
               </ul>
               <ul>
                 <p><span>• Profilni bezash</span></p>
@@ -192,7 +192,7 @@ const Gifts = React.memo(() => {
                 <p><span>• Birinchi 1000 obunachini qanday yig‘ish mumkin?  </span></p>
                 <p>- Bepul va xavfsiz targ‘ibot usullari  </p>
                 <p>- Hamkorlik va o‘zaro piarni qanday tashkil qilish kerak?  </p>
-                <p>- Obunachilarni kontentingni bo‘lishishga qanday ndash mumkin?  </p>
+                <p>- Obunachilarni kontentingni bo‘lishishga qanday undash mumkin?  </p>
               </ul>
               <ul>
                 <p><span>• Blogerlar bilan ishlash   </span></p>
@@ -210,7 +210,7 @@ const Gifts = React.memo(() => {
                 <p><span>• SMM'ni qanday monetizatsiya qilish mumkin?  </span></p>
                 <p>- Daromad olishning 5 real usuli   </p>
                 <p>- Kichik blog bilan ham pul ishlashni qanday boshlash mumkin?  </p>
-                <p>- Daromad olishga halal beradigan xatolar   </p>
+                <p>- Daromad olishga xalaqit beradigan xatolar   </p>
               </ul>
               <ul>
                 <p><span>• Avtovoronka va progrev orqali sotish   </span></p>
@@ -340,7 +340,7 @@ const Gifts = React.memo(() => {
               <p><span>• Trendli kontent yaratish </span></p>
               <p>- Hozir SMM'da nima ommabop?  </p>
               <p>- Trendlarni qayerdan topish mumkin?  </p>
-              <p>- Trendlarni o‘z mavzusingga moslashtirish  </p>
+              <p>- Trendlarni o‘z mavzusiga moslashtirish  </p>
             </ul>
             <ul>
               <p><span>• Stories: auditoriyani qanday jalb qilish mumkin? </span></p>
@@ -350,7 +350,7 @@ const Gifts = React.memo(() => {
             </ul>
             <ul>
               <p><span>• Telegram kanalini yuritish </span></p>
-              <p>- Telegram'da targ‘ibot asoslari  </p>
+              <p>- Telegramda targ‘ibot asoslari  </p>
               <p>- Kontentni qayerdan olish va nimalarni e’lon ilish kerak?</p>
               <p>- Qamrovni qanday oshirish mumkin?  </p>
             </ul>
@@ -370,7 +370,7 @@ const Gifts = React.memo(() => {
               <p><span>• Birinchi 1000 obunachini qanday yig‘ish mumkin?  </span></p>
               <p>- Bepul va xavfsiz targ‘ibot usullari  </p>
               <p>- Hamkorlik va o‘zaro piarni qanday tashkil qilish kerak?  </p>
-              <p>- Obunachilarni kontentingni bo‘lishishga qanday ndash mumkin?  </p>
+              <p>- Obunachilarni kontentingni bo‘lishishga qanday undash mumkin?  </p>
             </ul>
             <ul>
               <p><span>• Blogerlar bilan ishlash   </span></p>
@@ -388,7 +388,7 @@ const Gifts = React.memo(() => {
               <p><span>• SMM'ni qanday monetizatsiya qilish mumkin?  </span></p>
               <p>- Daromad olishning 5 real usuli   </p>
               <p>- Kichik blog bilan ham pul ishlashni qanday boshlash mumkin?  </p>
-              <p>- Daromad olishga halal beradigan xatolar   </p>
+              <p>- Daromad olishga xalaqit beradigan xatolar   </p>
             </ul>
             <ul>
               <p><span>• Avtovoronka va progrev orqali sotish   </span></p>
@@ -466,7 +466,7 @@ const Gifts = React.memo(() => {
             <ul>
               <p><span>• Reklama uchun kreativlarni qanday yaratish kerak? </span></p>
               <p> Reklama uchun banner yoki video qanday
-                ayyorlanadi?   </p>
+                tayyorlanadi?   </p>
               <p> G‘oyalar va ilhomni qayerdan topish mumkin?   </p>
               <p>- Telefonda kreativ yaratish uchun eng yaxshi vositalar    </p>
             </ul>
@@ -474,7 +474,7 @@ const Gifts = React.memo(() => {
               <p><span>• Targetlangan reklamani qanday ishga tushirish kerak?   </span></p>
               <p> Instagram'da target reklamaning asoslari   </p>
               <p> Telefonda reklamani to‘g‘ri sozlash   </p>
-              <p> Target byudjetni yo‘q qilishga olib keladigan xatolar </p>
+              <p> Target byudjetini yo‘q qilishga olib keladigan xatolar </p>
             </ul>
             <ul>
               <p><span>• Profilni bezash</span></p>

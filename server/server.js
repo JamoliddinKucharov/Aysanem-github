@@ -1,54 +1,113 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const axios = require("axios");
-const cors = require("cors");
+import express from "express";
+import axios from "axios";
+import dotenv from "dotenv";
+import fs from "fs";
+import cors from "cors";
+
+dotenv.config();
 
 const app = express();
-app.use(bodyParser.json());
+const PORT = 4000;
+
+app.use(express.json());
 app.use(cors())
 
-// amoCRM konfiguratsiyasi
-const AMOCRM_BASE_URL = "https://mainstreamuz.amocrm.ru";
-const INTEGRATION_ID = "1ad93f6d-1bdf-439f-9502-5c0b3b416769";
-const SECRET_KEY = "aXFq2qvMYMapyIKnlecZZPJc6Z20xahPpf4bMK8rsVIb7Xzr53S3FYbboiAisHqC";
-const LONG_TERM_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRjMTAwZTJlMWI0NDBmOGI4MDdkOWM2YmRhYjc0NWY3MWQ1M2MzMjQxYTQwNTZiNmUyMGU0YjUxOGM4MWZiYWEzNGE4MjM0ZWU3YmFjYWFlIn0.eyJhdWQiOiIxYWQ5M2Y2ZC0xYmRmLTQzOWYtOTUwMi01YzBiM2I0MTY3NjkiLCJqdGkiOiJkYzEwMGUyZTFiNDQwZjhiODA3ZDljNmJkYWI3NDVmNzFkNTNjMzI0MWE0MDU2YjZlMjBlNGI1MThjODFmYmFhMzRhODIzNGVlN2JhY2FhZSIsImlhdCI6MTc0NDA2MjQ2NywibmJmIjoxNzQ0MDYyNDY3LCJleHAiOjE3NDU5NzEyMDAsInN1YiI6IjExODAyOTQyIiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMyMDc4OTUwLCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiZDQyNjM0YzgtNmE5ZS00ZmNjLTllZGEtMjRkZDZmMDZlOThkIiwiYXBpX2RvbWFpbiI6ImFwaS1iLmFtb2NybS5ydSJ9.S976sOoepY0pokiysGyyWQA2TJTygoR30Jkyj8nMw5MfFopm3IW6og_owrNgVtXrUW2MnSZ7isZidRF-CK6y7lFR5RzIazctZCKXLH9ucvfbOp3Y64GkmoDARJU4tKhYVZpglCktAzoa1lMfvcwfAvTOxMyB40wHhIdVK52Sq3WXGE5x5PiOYQdSJQTjxABH9sYuZ9CvXqbBz-7zYVCbVwQjgXDv8A2fGitIN3fXyU9k5KrD4lcq3WUhibA51lzvl118jgc-S0jDXQ6axjsD8RMZrK0YhV7jsZ2p4DsaGhBMKMdJfn6L5F4omdj_N-rhjP-FdUSN6KhXfusZvd-s-A";
+let accessToken = process.env.AMOCRM_ACCESS_TOKEN;
+let refreshToken = process.env.AMOCRM_REFRESH_TOKEN;
+
+const saveTokens = (newAccessToken, newRefreshToken) => {
+  accessToken = newAccessToken;
+  refreshToken = newRefreshToken;
+
+  const envContent = `
+AMOCRM_ACCESS_TOKEN=${newAccessToken}
+AMOCRM_REFRESH_TOKEN=${newRefreshToken}
+AMOCRM_BASE_URL=${process.env.AMOCRM_BASE_URL}
+CLIENT_ID=${process.env.CLIENT_ID}
+CLIENT_SECRET=${process.env.CLIENT_SECRET}
+REDIRECT_URI=${process.env.REDIRECT_URI}
+`;
+
+  fs.writeFileSync(".env", envContent.trim());
+  console.log("🔄 Tokenlar yangilandi va .env faylga yozildi.");
+};
+
+const refreshAccessToken = async () => {
+  try {
+    const response = await axios.post(`${process.env.AMOCRM_BASE_URL}/oauth2/access_token`, {
+      client_id: process.env.CLIENT_ID,
+      client_secret: process.env.CLIENT_SECRET,
+      grant_type: "refresh_token",
+      refresh_token: refreshToken,
+      redirect_uri: process.env.REDIRECT_URI,
+    });
+
+    saveTokens(response.data.access_token, response.data.refresh_token);
+    return response.data.access_token;
+  } catch (error) {
+    console.error("❌ Refresh token bilan xatolik:", error.response?.data || error.message);
+    throw error;
+  }
+};
+
+const sendToAmoCRM = async (name, phone) => {
+  try {
+    const response = await axios.post(
+      `${process.env.AMOCRM_BASE_URL}/api/v4/leads/complex`,
+      [
+        {
+          name: `Yangi mijoz: ${name}`,
+          _embedded: {
+            contacts: [
+              {
+                first_name: name,
+                custom_fields_values: [
+                  {
+                    field_code: "PHONE",
+                    values: [{ value: phone }],
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    return response.data;
+  } catch (error) {
+    if (error.response && error.response.status === 401) {
+      console.log("🔐 Access token eskirgan, yangilanmoqda...");
+      const newToken = await refreshAccessToken();
+      return sendToAmoCRM(name, phone);
+    }
+
+    throw error;
+  }
+};
 
 app.post("/api/send-to-amocrm", async (req, res) => {
-    const { name, phone } = req.body;
+  const { name, phone } = req.body;
 
-    if (!name || !phone) {
-        return res.status(400).json({ error: "Ism va telefon raqami kerak." });
-    }
+  if (!name || !phone) {
+    return res.status(400).json({ error: "Iltimos, ism va telefon raqamini kiriting." });
+  }
 
-    try {
-        const response = await axios.post(
-            `${AMOCRM_BASE_URL}/api/v4/leads`,
-            {
-                name: `Yangi mijoz: ${name}`,
-                custom_fields_values: [
-                    {
-                        field_id: "TELEFON_FIELD_ID", // Telefon uchun mos field ID
-                        values: [
-                            {
-                                value: phone,
-                            },
-                        ],
-                    },
-                ],
-            },
-            {
-                headers: {
-                    Authorization: `Bearer ${LONG_TERM_TOKEN}`,
-                    "Content-Type": "application/json",
-                },
-            }
-        );
-
-        res.status(200).json({ success: true, data: response.data });
-    } catch (error) {
-        console.error("amoCRM API xatosi:", error.response?.data || error.message);
-        res.status(500).json({ error: "amoCRM bilan ulanishda xatolik." });
-    }
+  try {
+    const result = await sendToAmoCRM(name, phone);
+    res.status(200).json({ success: true, result });
+  } catch (error) {
+    console.error("❌ Yuborishda xatolik:", error.response?.data || error.message);
+    res.status(500).json({ error: "AmoCRM bilan ulanishda xatolik." });
+  }
 });
 
-app.listen(4000, () => console.log("Server 4000-portda ishlayapti."));
+app.listen(PORT, () => {
+  console.log(`🚀 Server ishga tushdi: http://localhost:${PORT}`);
+});

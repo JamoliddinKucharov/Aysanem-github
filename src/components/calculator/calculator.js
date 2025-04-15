@@ -62,9 +62,9 @@ const Calculator = React.memo(() => {
             </div>
           </div>
         </div>
-        <p className={styles.bottom}>
+        <p className={styles.bottom} >
           Odatda 1 mutaxassis 3 000 000 so‘mdan o‘rtacha chek bilan 5 tagacha
-          mijozni yuritadi, lekin daromad
+          mijozni yuritadi, lekin daromad&nbsp;
           <span>
             sizning ko‘nikmalaringizga qarab yanada yuqori bo‘lishi mumkin.
           </span>
