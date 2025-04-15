@@ -107,10 +107,7 @@ const Prices = React.memo(() => {
                                 </div>
                                 <div className={styles.pay}>
                                     <img src="/assets/images/anorbank.png" alt="" />
-                                </div>
-                                <div className={styles.pay}>
-                                    <img src="/assets/images/alif.png" alt="" />
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </div>
