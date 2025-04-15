@@ -4,6 +4,7 @@ import { lazy, Suspense, useContext, useEffect, useState } from "react";
 import { GlobalContext } from "./context/globalState";
 import FontFaceObserver from "fontfaceobserver";
 import Loading from "./components/loading/Loading";
+import { ToastContainer } from "react-toastify";
 // Pages
 const Home = lazy(() => import("./page/home/home"));
 const Footer = lazy(() => import("./components/footer/footer"));
@@ -52,6 +53,8 @@ function App() {
 
   return (
     <div className="project-main">
+      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} />
+
       {isAppLoaded ? <><Suspense
         fallback={
           <div className="Loading-page">
