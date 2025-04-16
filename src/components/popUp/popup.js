@@ -40,7 +40,7 @@ const PopUp = React.memo(() => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (name === "" || phone.length > 5) {
+        if (name === "" || phone.length < 5) {
             toast.error("Ismingiz va telefon raqamingizni kiriting!");
         } else {
             const payload = {
