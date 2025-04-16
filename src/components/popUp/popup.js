@@ -45,7 +45,7 @@ const PopUp = React.memo(() => {
         };
 
         try {
-            const response = await fetch("https://aysanem-back.vercel.app/api/send-to-amocrm", {
+            const response = await fetch("https://backend-aysanem.vercel.app/api/send-to-amocrm", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
