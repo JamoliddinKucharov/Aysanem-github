@@ -39,30 +39,34 @@ const PopUp = React.memo(() => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const payload = {
-            name,
-            phone,
-        };
 
-        try {
-            const response = await fetch("https://backend-aysanem.vercel.app/api/send-to-amocrm", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(payload),
-            });
+        if (name === "" || phone.length > 5) {
+            toast.error("Ismingiz va telefon raqamingizni kiriting!");
+        } else {
+            const payload = {
+                name,
+                phone,
+            };
 
-            if (response.ok) {
-                toast.success("Ma'lumotlar yuborildi! Tez orada siz bilan bog'lanamiz.");
-                setPopuphandler(false)
-            } else {
-                toast.error("Xatolik yuz berdi. Qayta urinib ko'ring.");
+            try {
+                const response = await fetch("https://backend-aysanem.vercel.app/api/send-to-amocrm", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(payload),
+                });
+
+                if (response.ok) {
+                    toast.success("Ma'lumotlar yuborildi! Tez orada siz bilan bog'lanamiz.");
+                    setPopuphandler(false)
+                } else {
+                    toast.error("Xatolik yuz berdi. Qayta urinib ko'ring.");
+                }
+            } catch (error) {
+                console.error("Yuborish xatosi:", error);
+                toast.error("Server bilan bog'lanib bo'lmadi.");
             }
-        } catch (error) {
-            console.error("Yuborish xatosi:", error);
-            toast.error("Server bilan bog'lanib bo'lmadi.");
-
         }
     };
 
