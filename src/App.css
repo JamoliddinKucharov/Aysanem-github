@@ -135,11 +135,16 @@ input[type="number"] {
 .backgroundPopUp.loading {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
 
 @media (max-width: 500px) {
   .container {
     width: 92%;
   }
+}
+
+button:disabled {
+  cursor: auto !important;
+  opacity: 0.8 !important;
 }
