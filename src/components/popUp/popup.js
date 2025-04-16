@@ -1,25 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
-import axios from "axios";
 import "react-phone-input-2/lib/style.css";
 import styles from "./popup.module.css";
 import { Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalContext } from "../../context/globalState";
 
 const PopUp = React.memo(() => {
 
     const {
+        courseHandler,
         setPopuphandler } = useContext(GlobalContext);
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [countryCode, setCountryCode] = useState("uz");
-
-
-
-
+    const [isChecked, setIsChecked] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
         let isMounted = true;
@@ -36,15 +34,17 @@ const PopUp = React.memo(() => {
         };
     }, []);
 
-
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
 
         if (name === "" || phone.length < 5) {
             toast.error("Ismingiz va telefon raqamingizni kiriting!");
+            setIsSubmitting(false);
+
         } else {
             const payload = {
-                name,
+                name: `${name} ${courseHandler}`,
                 phone,
             };
 
@@ -66,6 +66,9 @@ const PopUp = React.memo(() => {
             } catch (error) {
                 console.error("Yuborish xatosi:", error);
                 toast.error("Server bilan bog'lanib bo'lmadi.");
+            }
+            finally {
+                setIsSubmitting(false);
             }
         }
     };
@@ -102,12 +105,17 @@ const PopUp = React.memo(() => {
                         placeholder="Telefon raqamingiz"
                     />
                     <div className={styles.checkbox}>
-                        <input type="checkbox" name="offertaInstaLady" id="offertaInstaLady" />
-                        <label htmlFor="offertaInstaLady">
-                            Men ommaviy <Link to="https://uz.wikipedia.org/wiki/Oferta" target="_blank">oferta</Link> shartlariga roziman.
+                        <input type="checkbox" name="offertaInstaLady" id="offertaInstaLady"
+                            checked={isChecked}
+                            onChange={(e) => setIsChecked(e.target.checked)}
+                        />
+                        <label htmlFor="offertaInstaLady" >
+                            Shaxsiy ma’lumotlarimni qayta ishlashga roziman.
                         </label>
                     </div>
-                    <button type="submit">Yuborish</button>
+                    <button type="submit" disabled={!isChecked || isSubmitting}>
+                        {isSubmitting ? "Yuklanmoqda" : "Yuborish"}
+                    </button>
                 </form>
 
             </div>

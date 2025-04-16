@@ -6,7 +6,7 @@ import { GlobalContext } from "../../context/globalState";
 const Prices = React.memo(() => {
 
     const {
-        setPopuphandler } = useContext(GlobalContext);
+        setPopuphandler, setCourseHandler } = useContext(GlobalContext);
 
     return (
         <div className={styles.prices} id="course-price"  >
@@ -32,7 +32,10 @@ const Prices = React.memo(() => {
                             <h5>6 800 000 so’m</h5>
                             <h1>2 955 000 <span> so’m</span></h1>
                             <h3>295 500 <span> so’mdan/oyiga</span></h3>
-                            <Link to={"#"} onClick={(e) => { setPopuphandler(true) }}>SMM KASBINI EGALLASH</Link>
+                            <Link to={"#"} onClick={(e) => {
+                                setPopuphandler(true)
+                                setCourseHandler("Start")
+                            }}>SMM KASBINI EGALLASH</Link>
                         </div>
                     </div>
                     <div className={styles.price}>
@@ -54,7 +57,10 @@ const Prices = React.memo(() => {
                             <h5>9 600 000 so’m</h5>
                             <h1>5 350 000<span> so’m</span></h1>
                             <h3>520 000 <span> so’mdan/oyiga</span></h3>
-                            <Link to={"#"} onClick={(e) => { setPopuphandler(true) }}>SMM KASBINI EGALLASH</Link>
+                            <Link to={"#"} onClick={(e) => {
+                                setPopuphandler(true)
+                                setCourseHandler("Premium")
+                            }}>SMM KASBINI EGALLASH</Link>
                         </div>
                     </div>
                     <div className={styles.price}>
@@ -78,7 +84,10 @@ const Prices = React.memo(() => {
                             <h5>16 900 000 so’m</h5>
                             <h1>8 960 000<span> so’m</span></h1>
                             <h3>900 000<span> so’mdan/oyiga</span></h3>
-                            <Link to={"#"} onClick={(e) => { setPopuphandler(true) }}>SMM KASBINI EGALLASH</Link>
+                            <Link to={"#"} onClick={(e) => {
+                                setPopuphandler(true)
+                                setCourseHandler("VIP")
+                            }}>SMM KASBINI EGALLASH</Link>
                         </div>
                     </div>
                 </div>
@@ -107,7 +116,7 @@ const Prices = React.memo(() => {
                                 </div>
                                 <div className={styles.pay}>
                                     <img src="/assets/images/anorbank.png" alt="" />
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
