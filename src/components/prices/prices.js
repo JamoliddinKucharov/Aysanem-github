@@ -97,10 +97,10 @@ const Prices = React.memo(() => {
                         <div className={styles.left}>
                             <h3>Kursni harid qilish</h3>
                             <div className={styles.payIcons}>
-                                <div className={styles.pay}>
+                                <div className={styles.pay} onClick={() => setPopuphandler(true)}>
                                     <img src="/assets/images/payme.png" alt="" />
                                 </div>
-                                <div className={styles.pay}>
+                                <div className={styles.pay} onClick={() => setPopuphandler(true)}>
                                     <img src="/assets/images/click.png" alt="" />
                                 </div>
                             </div>
@@ -108,13 +108,13 @@ const Prices = React.memo(() => {
                         <div className={styles.right}>
                             <h3>Kursni nasiyaga harid qilish</h3>
                             <div className={styles.payIcons}>
-                                <div className={styles.pay}>
+                                <div className={styles.pay} onClick={() => setPopuphandler(true)}>
                                     <img src="/assets/images/uzum.png" alt="" />
                                 </div>
-                                <div className={styles.pay}>
+                                <div className={styles.pay} onClick={() => setPopuphandler(true)}>
                                     <img src="/assets/images/tbc.png" alt="" />
                                 </div>
-                                <div className={styles.pay}>
+                                <div className={styles.pay} onClick={() => setPopuphandler(true)}>
                                     <img src="/assets/images/anorbank.png" alt="" />
                                 </div>
                             </div>
