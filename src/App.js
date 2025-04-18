@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { lazy, Suspense, useContext, useEffect, useState } from "react";
 import { GlobalContext } from "./context/globalState";
@@ -64,6 +64,7 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path='*' element={<Navigate to='/' />} />
         </Routes>
       </Suspense>
 
