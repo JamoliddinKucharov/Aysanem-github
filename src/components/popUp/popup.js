@@ -49,7 +49,7 @@ const PopUp = React.memo(() => {
             };
 
             try {
-                const response = await fetch("https://back.saifproface.uz/api/send-to-amocrm", {
+                const response = await fetch("https://formic.saifproface.uz/api/send-to-amocrm", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
