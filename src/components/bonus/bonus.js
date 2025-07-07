@@ -10,7 +10,7 @@ const Bonus = React.memo(() => {
                 <div className={styles.row}>
                     <div className={styles.left}>
                         <h4>
-                            <span>24 SOATLIK</span> MAXSUS TAKLIF</h4>
+                            <span>2 SOATLIK</span> MAXSUS TAKLIF</h4>
 
                         <div className={styles.mobile}>
                             <img src="/assets/images/mobile_bonus.png" alt="" />

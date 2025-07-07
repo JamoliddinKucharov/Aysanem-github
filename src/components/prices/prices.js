@@ -31,6 +31,7 @@ const Prices = React.memo(() => {
                         <div className={styles.bottom}>
                             <h5>6 800 000 so’m</h5>
                             <h1>4 000 000 <span> so’m</span></h1>
+                            <p>20% chegirma amal qilinadi</p>
                             <Link to={"#"} onClick={(e) => {
                                 setPopuphandler(true)
                                 setCourseHandler("Start")
@@ -55,6 +56,7 @@ const Prices = React.memo(() => {
                         <div className={styles.bottom}>
                             <h5>9 600 000 so’m</h5>
                             <h1>7 000 000<span> so’m</span></h1>
+                                <p>20% chegirma amal qilinadi</p>
                             <Link to={"#"} onClick={(e) => {
                                 setPopuphandler(true)
                                 setCourseHandler("Premium")
@@ -81,6 +83,7 @@ const Prices = React.memo(() => {
                         <div className={styles.bottom}>
                             <h5>16 900 000 so’m</h5>
                             <h1>12 000 000<span> so’m</span></h1>
+                                <p>20% chegirma amal qilinadi</p>
                             <Link to={"#"} onClick={(e) => {
                                 setPopuphandler(true)
                                 setCourseHandler("VIP")

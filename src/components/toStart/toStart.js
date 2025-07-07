@@ -9,30 +9,31 @@ const ToStart = React.memo(() => {
     seconds: 0,
   });
 
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const now = new Date();
-      const nextMayFirst = new Date(now.getFullYear(), 4, 1);
+ useEffect(() => {
+  const calculateTimeLeft = () => {
+    const now = new Date();
+    const nextSeptemberFirst = new Date(now.getFullYear(), 8, 1); // 1-sentabr
 
-      if (now > nextMayFirst) {
-        nextMayFirst.setFullYear(nextMayFirst.getFullYear() + 1);
-      }
+    if (now > nextSeptemberFirst) {
+      nextSeptemberFirst.setFullYear(nextSeptemberFirst.getFullYear() + 1);
+    }
 
-      const difference = nextMayFirst - now;
+    const difference = nextSeptemberFirst - now;
 
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((difference / (1000 * 60)) % 60);
-      const seconds = Math.floor((difference / 1000) % 60);
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
 
-      setTimeLeft({ days, hours, minutes, seconds });
-    };
+    setTimeLeft({ days, hours, minutes, seconds });
+  };
 
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
+  calculateTimeLeft();
+  const timer = setInterval(calculateTimeLeft, 1000);
 
-    return () => clearInterval(timer);
-  }, []);
+  return () => clearInterval(timer);
+}, []);
+
 
   const formatNumber = (number) => (number < 10 ? `0${number}` : number);
 
